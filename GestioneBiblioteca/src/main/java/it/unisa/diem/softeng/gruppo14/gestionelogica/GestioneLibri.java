@@ -68,7 +68,7 @@ public class GestioneLibri {
      * @param[in] l2 Un oggetto Libro contenente i dati aggiornati.
      * 
      * @pre `l1` deve essere presente nella lista dei libri.
-     * @post I campi di l1 sono aggiornati e la lista è riordinata.
+     * @post I campi di `l1` sono aggiornati e la lista è riordinata.
      */
     public void modificaLibro(Libro l1, Libro l2){
         
