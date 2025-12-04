@@ -1,7 +1,7 @@
 package it.unisa.diem.softeng.gruppo14.main;
 
 /**
- *
+ * 
  * @author gruppo14
  */
 public class Main {
