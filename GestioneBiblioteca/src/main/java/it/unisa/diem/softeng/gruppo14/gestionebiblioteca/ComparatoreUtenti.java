@@ -3,21 +3,21 @@ package it.unisa.diem.softeng.gruppo14.gestionebiblioteca;
 import java.util.Comparator;
 
 /**
- * @brief Comparatore per l'ordinamento degli oggetti Utente.
+ * @brief Comparatore per l'ordinamento degli oggetti `Utente`.
  * 
- * Implementa l'interfaccia 'Comparator' per ordinare l'elenco
+ * Implementa l'interfaccia `Comparator` per ordinare l'elenco
  * degli utenti registrati. 
  * L'ordinamento è alfabetico e gerarchico secondo i seguenti criteri:
- * 1. Cognome
- * 2. Nome (se i cognomi sono uguali)
- * 3. Matricola (se anche i nomi sono uguali, per garantire univocità).
+ * * Cognome
+ * * Nome (se i cognomi sono uguali)
+ * * Matricola (se anche i nomi sono uguali, per garantire univocità).
  * 
  * @author gruppo14
  */
 public class ComparatoreUtenti implements Comparator<Utente>{
 
     /**
-     * @brief Confronta due oggetti Utente.
+     * @brief Confronta due oggetti `Utente`.
      * 
      * Verifica in sequenza cognome, nome ed infine matricola.
      * Tutti i confronti sulle stringhe sono case-insensitive.

@@ -3,22 +3,22 @@ package it.unisa.diem.softeng.gruppo14.gestionebiblioteca;
 import java.util.Comparator;
 
 /**
- * @brief Comparatore per l'ordinamento degli oggetti Prestito.
+ * @brief Comparatore per l'ordinamento degli oggetti `Prestito`.
  * 
- * Implementa l'interfaccia 'Comparator' per ordinare la
+ * Implementa l'interfaccia `Comparator` per ordinare la
  * visualizzazione dei prestiti.
  * Utile per visualizzare per prime le scadenze più imminenti
  * L'ordinamento avviene secondo un criterio:
- * 1. Data di restituzione (dalla più vicina alla più lontana).
+ * * Data di restituzione (dalla più vicina alla più lontana).
  * 
  * @author gruppo14
  */
 public class ComparatorePrestiti implements Comparator<Prestito>{
 
     /**
-     * @brief Confronta due oggetti Prestito.
+     * @brief Confronta due oggetti `Prestito`.
      * 
-     * Verifica la data di Restituzione dei due prestiti.
+     * Verifica la data di restituzione dei due prestiti.
      * 
      * @param[in] o1 Il primo prestito da confrontare
      * @param[in] o2 Il secondo prestito da confrontare

@@ -12,6 +12,8 @@ import java.util.List;
  * per manipolare questi dati (aggiunta, rimozione, modifica, ricerca)
  * e per gestire le operazioni di prestito e restituzione.
  * 
+ * @invariant libri != null && utenti != null && prestiti != null
+ * 
  * @author gruppo14
  */
 public class ArchivioBiblioteca {
@@ -22,12 +24,15 @@ public class ArchivioBiblioteca {
     /// Lista contenente gli utenti registrati nel sistema.
     private List <Utente> utenti;
     
+    /// Lista contenente i prestiti attualmente attivi.
+    private List<Prestito> prestiti;
+    
     /**
      * @brief Costruttore.
      * 
-     * Inizializza l'archivio creando liste vuote per libri e utenti.
+     * Inizializza l'archivio creando liste vuote per libri, utenti e prestiti.
      * 
-     * @post Le liste di libri e utenti sono inizializzate e vuote.
+     * @post Le liste di libri, utenti e prestiti sono inizializzate e vuote.
      */
     public ArchivioBiblioteca(){
         
@@ -52,6 +57,15 @@ public class ArchivioBiblioteca {
      */
     public List<Utente> getUtenti() {
         return utenti;
+    }
+    
+    /**
+     * @brief Restituisce la lista dei prestiti attivi.
+     * 
+     * @return Lista di oggetti Prestito.
+     */
+    public List<Prestito> getPrestiti() {
+        return prestiti;
     }
     
     /**

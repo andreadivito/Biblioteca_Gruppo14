@@ -3,41 +3,46 @@ package it.unisa.diem.softeng.gruppo14.gestionebiblioteca;
 import java.util.List;
 
 /**
- * @brief Classe che rappresenta un libro in ArchivioBiblioteca.
+ * @brief Classe che rappresenta un libro della biblioteca.
  * 
  * La classe permette di memorizzare e gestire le 
  * informazioni riguardanti un libro presente nella biblioteca.
  * 
+ * @invariant
+ * I campi `titolo`, `autori` e `ISBN` non devono essere `null`.
+ * Il numero di copie disponibili (`numCopie`) deve essere sempre maggiore o uguale a `0`.
+ * 
  * @author gruppo14
  */
-
 public class Libro {
     
-    /** @brief Titolo del libro. */
+    /// @brief Titolo del libro.
     private String titolo;
     
-    /** @brief Lista che memorizza gli autori del libro. */
+    /// @brief Lista che memorizza gli autori del libro.
     private List<String> autori;
     
-    /** @brief Anno di pubblicazione del libro. */
+    /// @brief Anno di pubblicazione del libro.
     private int annoPubblicazione;
     
-    /** @brief ISBN del libro */
+    /// @brief ISBN del libro
     private String ISBN;
     
-    /** @brief Numero di copie del libro. */
+    /// @brief Numero di copie del libro.
     private int numCopie;
     
     /**
      * @brief Costruttore
+     * 
+     * Inizializza un nuovo libro con le informazioni specificate.
+     * Utilizza `assert` per verificare che i dati inseriti siano validi.
      * 
      * @param[in] titolo Titolo del libro.
      * @param[in] annoPubblicazione Anno di pubblicazione del libro.
      * @param[in] ISBN ISBN del libro.
      * @param[in] numCopie Numero di copie del libro.
      * 
-     * @pre numCopie > 0.
-     * @post Viene creato un oggetto Libro con i campi inizializzati.
+     * @post Viene creato un oggetto `Libro` con i campi inizializzati.
      */
     public Libro(String titolo, int annoPubblicazione, String ISBN, int numCopie){
         
@@ -92,7 +97,9 @@ public class Libro {
 
     /**
      * @brief Imposta il titolo del libro.
+     * 
      * @param[in] titolo Titolo da assegnare al libro.
+     * 
      * @post Il titolo del libro viene aggiornato.
      */
     public void setTitolo(String titolo) {
@@ -101,7 +108,9 @@ public class Libro {
 
     /**
      * @brief Imposta la lista degli autori.
+     * 
      * @param[in] autori Lista di autori da assegnare al libro.
+     * 
      * @post La lista degli autori viene aggiornata.
      */
     public void setAutori(List<String> autori) {
@@ -110,7 +119,9 @@ public class Libro {
 
     /**
      * @brief Imposta l'anno di pubblicazione del libro.
+     * 
      * @param[in] annoPubblicazione Imposta l'anno di pubblicazione del libro.
+     * 
      * @post L'anno di pubblicazione viene aggiornato.
      */
     public void setAnnoPubblicazione(int annoPubblicazione) {
@@ -128,8 +139,9 @@ public class Libro {
 
     /**
      * @brief Imposta il numero di copie del libro.
+     * 
      * @param[in] numCopie Numero di copie da assegnare al libro.
-     * @pre numCopie > 0.
+     * 
      * @post Il numero di copie viene aggiornato se il valore è valido.
      */
     public void setNumCopie(int numCopie) {
@@ -143,8 +155,7 @@ public class Libro {
      * Riduce di un'unità il numero di copie disponibili se queste sono maggiori di zero.
      * Da utilizzare quando viene effettuato un prestito.
      * 
-     * @pre numCopie > 0.
-     * @post numCopie è decrementato di 1.
+     * @post `numCopie` è decrementato di 1.
      */
     public void decrementaCopie(){
         
@@ -158,7 +169,7 @@ public class Libro {
      * Aumenta di un'unità il numero di copie disponibili.
      * Da utilizzare quando viene restituito un prestito o acquistata una nuova copia.
      * 
-     * @post numCopie è incrementato di 1.
+     * @post `numCopie` è incrementato di 1.
      */
     public void incrementaCopie(){
         

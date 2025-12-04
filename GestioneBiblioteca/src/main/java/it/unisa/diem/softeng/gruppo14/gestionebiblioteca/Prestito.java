@@ -3,38 +3,40 @@ package it.unisa.diem.softeng.gruppo14.gestionebiblioteca;
 import java.time.LocalDate;
 
 /**
- * @brief Classe che rappresenta un prestito all'interno del sistema bibliotecario.
+ * @brief Classe che rappresenta un **prestito** nella gestione della biblioteca.
  *
- * La classe gestisce l'associazione tra un Libro e un Utente, definendo
+ * La classe gestisce l'associazione tra un oggetto `Libro` e un oggetto `Utente`, definendo
  * una data di scadenza per la restituzione. Fornisce inoltre funzionalità
  * per verificare se il prestito è in ritardo rispetto alla data odierna.
+ * 
+ * @invariant I campi `libro`, `utente` e `dataRestituzione` non devono essere `null`.
  * 
  * @author gruppo14
  */
 public class Prestito {
     
-    /** @brief Il libro oggetto del prestito. */
+    /// @brief Il libro oggetto del prestito.
     private Libro libro;
     
-    /** @brief L'utente che ha richiesto il prestito. */
+    /// @brief L'utente che ha richiesto il prestito.
     private Utente utente;
     
-    /** @brief La data entro cui il libro deve essere restituito. */
+    /// @brief La data entro cui il libro deve essere restituito. 
     private LocalDate dataRestituzione;
     
     /**
-     * @brief Costruttore della classe Prestito.
+     * @brief Costruttore.
      * 
-     * Inizializza un nuovo prestito associando un libro a un utente, 
+     * Inizializza un nuovo prestito associando un libro ad un utente, 
      * il prestito avrà una data di scadenza.
      * Verifica che nessuno dei parametri sia null.
+     * Utilizza `assert` per verificare che la data di restituzione inserita sia valida.
      * 
      * @param[in] libro Il libro da prestare.
      * @param[in] utente L'utente che prende in prestito il libro.
      * @param[in] dataRestituzione La data limite per la restituzione.
      * 
-     * @pre libro != null && utente != null && dataRestituzione != null.
-     * @post Viene creato un oggetto Prestito valido.
+     * @post Viene creato un oggetto `Prestito` valido.
      */
     public Prestito(Libro libro, Utente utente, LocalDate dataRestituzione){
         
@@ -43,7 +45,7 @@ public class Prestito {
     /**
      * @brief Restituisce il libro prestato.
      * 
-     * @return L'oggetto Libro associato al prestito.
+     * @return L'oggetto `Libro` associato al prestito.
      */
     public Libro getLibro() {
         return libro;
@@ -52,7 +54,7 @@ public class Prestito {
     /**
      * @brief Restituisce l'utente beneficiario del prestito.
      * 
-     * @return L'oggetto Utente associato al prestito.
+     * @return L'oggetto `Utente` associato al prestito.
      */
     public Utente getUtente() {
         return utente;
@@ -67,25 +69,12 @@ public class Prestito {
         return dataRestituzione;
     }
     
-    /**
-     * @brief Verifica se il prestito è in ritardo.
-     * 
-     * Confronta la data di restituzione prevista con la data corrente (LocalDate.now()).
-     * 
-     * @return true se la data corrente è successiva alla data di restituzione, false altrimenti.
-     */
-    public boolean verificaRitardo(){
-        
-        return false;
-        
-    }
     
     /**
      * @brief Imposta un nuovo libro per il prestito.
      * 
      * @param[in] libro Il nuovo libro da associare.
      * 
-     * @pre libro != null.
      * @post Il libro associato viene aggiornato.
      */
     public void setLibro(Libro libro) {
@@ -97,7 +86,6 @@ public class Prestito {
      * 
      * @param[in] utente Il nuovo utente da associare.
      * 
-     * @pre utente != null.
      * @post L'utente associato viene aggiornato.
      */
     public void setUtente(Utente utente) {
@@ -109,11 +97,23 @@ public class Prestito {
      * 
      * @param[in] dataRestituzione La nuova data di scadenza.
      * 
-     * @pre dataRestituzione != null.
      * @post La data di restituzione viene aggiornata.
      */
     public void setDataRestituzione(LocalDate dataRestituzione) {
         this.dataRestituzione = dataRestituzione;
+    }
+    
+    /**
+     * @brief Verifica se il prestito è in ritardo.
+     * 
+     * Confronta la data di restituzione prevista con la data corrente (`LocalDate.now()`).
+     * 
+     * @return true se la data corrente è successiva alla data di restituzione, false altrimenti.
+     */
+    public boolean verificaRitardo(){
+        
+        return false;
+        
     }
     
     /**
