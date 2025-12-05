@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="gestioneUtentiPane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.UtenteController">
+   <children>
+      <!-- Lista Utenti -->
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="556.0" prefWidth="648.0" spacing="10.0">
+         <children>
+            <Label text="Lista Utenti">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="userTable1" prefHeight="480.0" prefWidth="648.0">
+               <columns>
+                  <TableColumn fx:id="surnameClm1" prefWidth="150.0" text="Cognome" />
+                  <TableColumn fx:id="nameClm1" prefWidth="150.0" text="Nome" />
+                  <TableColumn fx:id="codeClm1" prefWidth="141.0" text="Matricola" />
+                  <TableColumn fx:id="mailClm1" prefWidth="205.0" text="Email" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+
+      <!-- Aggiungi Utente -->
+      <VBox layoutX="678.0" layoutY="25.0" prefHeight="556.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Label text="Aggiungi Utente">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameField" promptText="Nome" />
+            <TextField fx:id="surnameField" promptText="Cognome" />
+            <TextField fx:id="codeField" promptText="Matricola" />
+            <TextField fx:id="mailField" promptText="nome@unisa.it" />
+            <Button fx:id="addUserButton" mnemonicParsing="false" onAction="#aggiungiUtente" text="Conferma" />
+            <Button fx:id="modifyUserButton" mnemonicParsing="false" onAction="#modificaUtente" text="Modifica Utente Selezionato" />
+            <Button fx:id="removeUserButton" mnemonicParsing="false" onAction="#rimuoviUtente" text="Rimuovi Utente Selezionato" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

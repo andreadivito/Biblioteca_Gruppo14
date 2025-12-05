@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="gestionePrestitiPane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.PrestitoAttivoController">
+   <children>
+      <!-- Prestiti Attivi -->
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="556.0" prefWidth="648.0" spacing="10.0">
+         <children>
+            <Label text="Prestiti in Corso">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="LoanTable" prefHeight="480.0" prefWidth="648.0">
+               <columns>
+                  <TableColumn fx:id="loanBookTitleClm" prefWidth="217.0" text="Titolo Libro" />
+                  <TableColumn fx:id="loanUserClm" prefWidth="214.0" text="Beneficiario" />
+                  <TableColumn fx:id="dateLimitClm" prefWidth="216.0" text="Data Restituzione Prevista" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+
+      <!-- Azioni Prestiti -->
+      <VBox layoutX="678.0" layoutY="25.0" prefHeight="556.0" prefWidth="200.0" spacing="25.0">
+         <children>
+            <Label text="Azioni Prestiti">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="removeLoanButton" mnemonicParsing="false" onAction="#rimuoviPrestito" text="Rimuovi Prestito Selezionato" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

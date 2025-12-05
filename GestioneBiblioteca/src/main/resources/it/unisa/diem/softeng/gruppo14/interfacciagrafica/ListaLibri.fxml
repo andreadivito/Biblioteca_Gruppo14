@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="gestioneLibriPane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.LibroController">
+   <children>
+      <!-- Catalogo Libri -->
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="556.0" prefWidth="648.0" spacing="10.0">
+         <children>
+            <Label text="Catalogo Libri">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="bookTable1" prefHeight="480.0" prefWidth="622.0">
+               <columns>
+                  <TableColumn fx:id="titleClm1" prefWidth="154.0" text="Titolo" />
+                  <TableColumn fx:id="authorClm1" prefWidth="146.0" text="Autore" />
+                  <TableColumn fx:id="pubYearClm1" prefWidth="107.0" text="Anno" />
+                  <TableColumn fx:id="isbnClm1" prefWidth="130.0" text="ISBN" />
+                  <TableColumn fx:id="numCopiesClm1" prefWidth="110.0" text="Copie Disponibili" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+
+      <!-- Aggiungi Libro -->
+      <VBox layoutX="678.0" layoutY="25.0" prefHeight="556.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Label text="Aggiungi Libro">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="titleField" prefHeight="26.0" prefWidth="176.0" promptText="Titolo" />
+            <TextField fx:id="authorField" promptText="Autore" />
+            <TextField fx:id="pubYearField" promptText="Anno Pubblicazione" />
+            <TextField fx:id="isbnField" promptText="ISBN" />
+            <TextField fx:id="numCopiesField" promptText="Numero Copie" />
+            <Button fx:id="addBookButton" mnemonicParsing="false" onAction="#aggiungiLibro" text="Aggiungi Libro" />
+            <Button fx:id="modifyBookButton" mnemonicParsing="false" onAction="#modificaLibro" text="Modifica Libro Selezionato" />
+            <Button fx:id="removeBookButton" mnemonicParsing="false" onAction="#rimuoviLibro" text="Rimuovi Libro Selezionato" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
