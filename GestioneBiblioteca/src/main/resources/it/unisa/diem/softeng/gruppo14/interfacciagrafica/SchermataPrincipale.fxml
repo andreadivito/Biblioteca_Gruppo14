@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.geometry.Insets?>
+
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -7,9 +7,8 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.SchermataPrincipaleController">
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.SchermataPrincipaleController">
    <children>
       <!-- VBox che contiene MenuBar e TabPane -->
       <VBox prefHeight="650.0" prefWidth="900.0">
@@ -19,7 +18,7 @@
            <menus>
              <Menu mnemonicParsing="false" text="Archivio...">
                <items>
-                 <MenuItem mnemonicParsing="false" text="Salva Dati su File" />
+                 <MenuItem fx:id="salvaBtn" mnemonicParsing="false" onAction="#salvaArchivio" text="Salva Dati su File" />
                </items>
              </Menu>
            </menus>
@@ -31,28 +30,28 @@
              <!-- Tab Gestione Libri -->
              <Tab text="Gestione Libri">
                <content>
-                 <fx:include fx:id="gestioneLibriPane" source="ListaLibri.fxml"/>
+                 <fx:include fx:id="gestioneLibriPane" source="ListaLibri.fxml" />
                </content>
              </Tab>
 
              <!-- Tab Gestione Utenti -->
              <Tab text="Gestione Utenti">
                <content>
-                   <fx:include fx:id="gestioneUtentiPane" source="ListaUtenti.fxml"/>
+                   <fx:include fx:id="gestioneUtentiPane" source="ListaUtenti.fxml" />
                </content>
              </Tab>
 
              <!-- Tab Prestiti Attivi -->
              <Tab text="Prestiti Attivi">
                <content>
-                 <fx:include fx:id="gestionePrestitiPane" source="ListaPrestiti.fxml"/>
+                 <fx:include fx:id="gestionePrestitiPane" source="ListaPrestiti.fxml" />
                </content>
              </Tab>
 
              <!-- Tab Nuovo Prestito -->
              <Tab text="Nuovo Prestito">
                <content>
-                 <fx:include fx:id="nuovoPrestitoPane" source="NuovoPrestito.fxml"/>
+                 <fx:include fx:id="nuovoPrestitoPane" source="NuovoPrestito.fxml" />
                </content>
              </Tab>
            </tabs>

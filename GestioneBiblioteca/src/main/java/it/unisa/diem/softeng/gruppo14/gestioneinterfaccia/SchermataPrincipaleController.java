@@ -7,7 +7,10 @@ package it.unisa.diem.softeng.gruppo14.gestioneinterfaccia;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.MenuItem;
 
 /**
  * FXML Controller class
@@ -16,6 +19,9 @@ import javafx.fxml.Initializable;
  */
 public class SchermataPrincipaleController implements Initializable {
 
+    @FXML
+    private MenuItem salvaBtn;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +29,9 @@ public class SchermataPrincipaleController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void salvaArchivio(ActionEvent event) {
+    }
     
 }

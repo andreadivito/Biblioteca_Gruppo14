@@ -46,15 +46,15 @@ public class LibroController implements Initializable {
     @FXML
     private TextField numCopiesField;
     @FXML
-    private Button addBookButton;
-    @FXML
-    private Button modifyBookButton;
-    @FXML
-    private Button removeBookButton;
-    @FXML
     private AnchorPane gestioneLibriPane;
     @FXML
     private TextField bookSearchField;
+    @FXML
+    private Button aggiungiLBtn;
+    @FXML
+    private Button modificaLBtn;
+    @FXML
+    private Button rimuoviLBtn;
 
     /**
      * Initializes the controller class.
@@ -65,15 +65,15 @@ public class LibroController implements Initializable {
     }    
 
     @FXML
-    private void aggiungiLibro(ActionEvent event) {
+    private void aggiungiLibroBtn(ActionEvent event) {
     }
 
     @FXML
-    private void modificaLibro(ActionEvent event) {
+    private void modificaLibroBtn(ActionEvent event) {
     }
 
     @FXML
-    private void rimuoviLibro(ActionEvent event) {
+    private void rimuoviLibroBtn(ActionEvent event) {
     }
     
 }

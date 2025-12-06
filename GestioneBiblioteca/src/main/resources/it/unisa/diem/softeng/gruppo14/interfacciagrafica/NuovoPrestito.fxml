@@ -55,7 +55,7 @@
             </Label>
             <Label text="Data Restituzione Prevista (GG/MM/AAAA):" />
             <TextField fx:id="dateLimitField" maxWidth="300.0" prefWidth="300.0" promptText="es. 31/12/2025" />
-            <Button fx:id="addLoanButton" mnemonicParsing="false" onAction="#aggiungiPrestito" prefWidth="300.0" style="-fx-background-color: #C0E3AF; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Registra Nuovo Prestito" />
+            <Button fx:id="aggiungiPBtn" mnemonicParsing="false" onAction="#aggiungiPrestitoBtn" prefWidth="300.0" style="-fx-background-color: #C0E3AF; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Registra Nuovo Prestito" />
          </children>
       </VBox>
    </children>

@@ -42,15 +42,15 @@ public class UtenteController implements Initializable {
     @FXML
     private TextField mailField;
     @FXML
-    private Button addUserButton;
-    @FXML
-    private Button modifyUserButton;
-    @FXML
-    private Button removeUserButton;
-    @FXML
     private AnchorPane gestioneUtentiPane;
     @FXML
     private TextField userSearchField;
+    @FXML
+    private Button aggiungiUBtn;
+    @FXML
+    private Button modificaUBtn;
+    @FXML
+    private Button rimuoviUBtn;
 
     /**
      * Initializes the controller class.
@@ -61,15 +61,15 @@ public class UtenteController implements Initializable {
     }    
 
     @FXML
-    private void aggiungiUtente(ActionEvent event) {
+    private void aggiungiUtenteBtn(ActionEvent event) {
     }
 
     @FXML
-    private void modificaUtente(ActionEvent event) {
+    private void modificaUtenteBtn(ActionEvent event) {
     }
 
     @FXML
-    private void rimuoviUtente(ActionEvent event) {
+    private void rimuoviUtenteBtn(ActionEvent event) {
     }
     
 }

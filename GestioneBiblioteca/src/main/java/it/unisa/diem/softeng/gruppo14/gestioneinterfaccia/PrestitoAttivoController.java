@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -30,7 +31,9 @@ public class PrestitoAttivoController implements Initializable {
     @FXML
     private TableColumn<?, ?> dateLimitClm;
     @FXML
-    private Button removeLoanButton;
+    private AnchorPane gestionePrestitiPane;
+    @FXML
+    private Button rimuoviPBtn;
 
     /**
      * Initializes the controller class.
@@ -41,7 +44,7 @@ public class PrestitoAttivoController implements Initializable {
     }    
 
     @FXML
-    private void rimuoviPrestito(ActionEvent event) {
+    private void rimuoviPrestitoBtn(ActionEvent event) {
     }
     
 }

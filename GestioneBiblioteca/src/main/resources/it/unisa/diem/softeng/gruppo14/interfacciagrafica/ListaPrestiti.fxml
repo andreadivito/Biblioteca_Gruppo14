@@ -36,7 +36,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="removeLoanButton" mnemonicParsing="false" onAction="#rimuoviPrestito" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Rimuovi Prestito Selezionato" />
+            <Button fx:id="rimuoviPBtn" mnemonicParsing="false" onAction="#rimuoviPrestitoBtn" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Rimuovi Prestito Selezionato" />
          </children>
       </VBox>
    </children>

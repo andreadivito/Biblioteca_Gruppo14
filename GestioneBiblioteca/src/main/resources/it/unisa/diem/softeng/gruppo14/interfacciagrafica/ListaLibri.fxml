@@ -51,9 +51,9 @@
             <TextField fx:id="pubYearField" promptText="Anno Pubblicazione" />
             <TextField fx:id="isbnField" promptText="ISBN" />
             <TextField fx:id="numCopiesField" promptText="Numero Copie" />
-            <Button fx:id="addBookButton" mnemonicParsing="false" onAction="#aggiungiLibro" prefWidth="200.0" style="-fx-background-color: #C0E3AF; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Conferma" />
-            <Button fx:id="modifyBookButton" mnemonicParsing="false" onAction="#modificaLibro" prefWidth="200.0" text="Modifica Libro Selezionato" />
-            <Button fx:id="removeBookButton" mnemonicParsing="false" onAction="#rimuoviLibro" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Rimuovi Libro Selezionato" />
+            <Button fx:id="aggiungiLBtn" mnemonicParsing="false" onAction="#aggiungiLibroBtn" prefWidth="200.0" style="-fx-background-color: #C0E3AF; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Conferma" />
+            <Button fx:id="modificaLBtn" mnemonicParsing="false" onAction="#modificaLibroBtn" prefWidth="200.0" text="Modifica Libro Selezionato" />
+            <Button fx:id="rimuoviLBtn" mnemonicParsing="false" onAction="#rimuoviLibroBtn" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Rimuovi Libro Selezionato" />
          </children>
       </VBox>
    </children>

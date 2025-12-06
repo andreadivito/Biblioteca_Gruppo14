@@ -49,9 +49,9 @@
             <TextField fx:id="surnameField" promptText="Cognome" />
             <TextField fx:id="codeField" promptText="Matricola" />
             <TextField fx:id="mailField" promptText="nome@unisa.it" />
-            <Button fx:id="addUserButton" mnemonicParsing="false" onAction="#aggiungiUtente" prefWidth="200.0" style="-fx-background-color: #C0E3AF; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Conferma" />
-            <Button fx:id="modifyUserButton" mnemonicParsing="false" onAction="#modificaUtente" prefWidth="200.0" text="Modifica Utente Selezionato" />
-            <Button fx:id="removeUserButton" mnemonicParsing="false" onAction="#rimuoviUtente" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Rimuovi Utente Selezionato" />
+            <Button fx:id="aggiungiUBtn" mnemonicParsing="false" onAction="#aggiungiUtenteBtn" prefWidth="200.0" style="-fx-background-color: #C0E3AF; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Conferma" />
+            <Button fx:id="modificaUBtn" mnemonicParsing="false" onAction="#modificaUtenteBtn" prefWidth="200.0" text="Modifica Utente Selezionato" />
+            <Button fx:id="rimuoviUBtn" mnemonicParsing="false" onAction="#rimuoviUtenteBtn" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Rimuovi Utente Selezionato" />
          </children>
       </VBox>
    </children>
