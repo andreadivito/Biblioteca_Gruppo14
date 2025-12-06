@@ -86,5 +86,15 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+                <mainClass>it.unisa.diem.softeng.gruppo14.main.Main</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
   </build>
 </project>
