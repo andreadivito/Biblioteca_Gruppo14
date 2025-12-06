@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -50,6 +51,10 @@ public class LibroController implements Initializable {
     private Button modifyBookButton;
     @FXML
     private Button removeBookButton;
+    @FXML
+    private AnchorPane gestioneLibriPane;
+    @FXML
+    private TextField bookSearchField;
 
     /**
      * Initializes the controller class.

@@ -9,10 +9,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="nuovoPrestitoPane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.NuovoPrestitoController">
+<AnchorPane fx:id="nuovoPrestitoPane" minHeight="580.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.NuovoPrestitoController">
    <children>
       <!-- Seleziona Utente e Libro -->
-      <VBox layoutX="14.0" layoutY="14.0" prefHeight="556.0" prefWidth="500.0" spacing="10.0">
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="530.0" prefWidth="500.0" spacing="10.0">
          <children>
             <Label text="Seleziona Utente">
                <font>
@@ -21,10 +21,10 @@
             </Label>
             <TableView fx:id="userTable" prefHeight="245.0" prefWidth="486.0">
                <columns>
-                  <TableColumn fx:id="surnameClm" prefWidth="100.0" text="Cognome" />
-                  <TableColumn fx:id="nameClm" prefWidth="100.0" text="Nome" />
-                  <TableColumn fx:id="codeClm" prefWidth="100.0" text="Matricola" />
-                  <TableColumn fx:id="mailClm" prefWidth="120.0" text="Email" />
+                  <TableColumn fx:id="surnameClm" prefWidth="118.18180847167969" text="Cognome" />
+                  <TableColumn fx:id="nameClm" prefWidth="114.31816864013672" text="Nome" />
+                  <TableColumn fx:id="codeClm" prefWidth="118.46537780761719" text="Matricola" />
+                  <TableColumn fx:id="mailClm" prefWidth="148.78363037109375" text="Email" />
                </columns>
             </TableView>
 
@@ -35,9 +35,9 @@
             </Label>
             <TableView fx:id="bookTable" prefHeight="250.0" prefWidth="420.0">
                <columns>
-                  <TableColumn fx:id="titleClm" prefWidth="150.0" text="Titolo" />
-                  <TableColumn fx:id="authorClm" prefWidth="150.0" text="Autore" />
-                  <TableColumn fx:id="numCopiesClm" prefWidth="120.0" text="Copie Disponibili" />
+                  <TableColumn fx:id="titleClm" prefWidth="164.71855926513672" text="Titolo" />
+                  <TableColumn fx:id="authorClm" prefWidth="176.28146362304688" text="Autore" />
+                  <TableColumn fx:id="numCopiesClm" prefWidth="159.30743408203125" text="Copie Disponibili" />
                   <TableColumn fx:id="pubYearClm" visible="false" />
                   <TableColumn fx:id="isbnClm" visible="false" />
                </columns>
@@ -46,7 +46,7 @@
       </VBox>
 
       <!-- Aggiungi Prestito -->
-      <VBox layoutX="545.0" layoutY="14.0" prefHeight="556.0" prefWidth="325.0" spacing="10.0">
+      <VBox layoutX="525.0" layoutY="14.0" prefHeight="556.0" prefWidth="315.0" spacing="10.0">
          <children>
             <Label text="Aggiungi Prestito">
                <font>
@@ -54,8 +54,8 @@
                </font>
             </Label>
             <Label text="Data Restituzione Prevista (GG/MM/AAAA):" />
-            <TextField fx:id="dateLimitField" promptText="es. 31/12/2025" />
-            <Button fx:id="addLoanButton" mnemonicParsing="false" onAction="#aggiungiPrestito" text="Registra Nuovo Prestito" />
+            <TextField fx:id="dateLimitField" maxWidth="300.0" prefWidth="300.0" promptText="es. 31/12/2025" />
+            <Button fx:id="addLoanButton" mnemonicParsing="false" onAction="#aggiungiPrestito" prefWidth="300.0" style="-fx-background-color: #C0E3AF; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Registra Nuovo Prestito" />
          </children>
       </VBox>
    </children>

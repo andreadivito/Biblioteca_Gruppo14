@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="gestionePrestitiPane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.PrestitoAttivoController">
+<AnchorPane fx:id="gestionePrestitiPane" prefHeight="450.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.PrestitoAttivoController">
    <children>
       <!-- Prestiti Attivi -->
       <VBox layoutX="14.0" layoutY="14.0" prefHeight="556.0" prefWidth="648.0" spacing="10.0">
@@ -36,7 +36,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="removeLoanButton" mnemonicParsing="false" onAction="#rimuoviPrestito" text="Rimuovi Prestito Selezionato" />
+            <Button fx:id="removeLoanButton" mnemonicParsing="false" onAction="#rimuoviPrestito" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Rimuovi Prestito Selezionato" />
          </children>
       </VBox>
    </children>

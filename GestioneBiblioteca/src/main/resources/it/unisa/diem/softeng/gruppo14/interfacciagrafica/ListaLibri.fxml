@@ -6,10 +6,11 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="gestioneLibriPane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.LibroController">
+<AnchorPane fx:id="gestioneLibriPane" prefHeight="450.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.LibroController">
    <children>
       <!-- Catalogo Libri -->
       <VBox layoutX="14.0" layoutY="14.0" prefHeight="556.0" prefWidth="648.0" spacing="10.0">
@@ -19,6 +20,12 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+            <HBox prefHeight="37.0" prefWidth="648.0" spacing="10.0">
+               <children>
+                  <Label text="Cerca (Titolo, Autore, ISBN):" />
+                  <TextField fx:id="bookSearchField" prefHeight="26.0" prefWidth="297.0" promptText="Cerca..." />
+               </children>
+            </HBox>
             <TableView fx:id="bookTable1" prefHeight="480.0" prefWidth="622.0">
                <columns>
                   <TableColumn fx:id="titleClm1" prefWidth="154.0" text="Titolo" />
@@ -44,9 +51,9 @@
             <TextField fx:id="pubYearField" promptText="Anno Pubblicazione" />
             <TextField fx:id="isbnField" promptText="ISBN" />
             <TextField fx:id="numCopiesField" promptText="Numero Copie" />
-            <Button fx:id="addBookButton" mnemonicParsing="false" onAction="#aggiungiLibro" text="Aggiungi Libro" />
-            <Button fx:id="modifyBookButton" mnemonicParsing="false" onAction="#modificaLibro" text="Modifica Libro Selezionato" />
-            <Button fx:id="removeBookButton" mnemonicParsing="false" onAction="#rimuoviLibro" text="Rimuovi Libro Selezionato" />
+            <Button fx:id="addBookButton" mnemonicParsing="false" onAction="#aggiungiLibro" prefWidth="200.0" style="-fx-background-color: #C0E3AF; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Conferma" />
+            <Button fx:id="modifyBookButton" mnemonicParsing="false" onAction="#modificaLibro" prefWidth="200.0" text="Modifica Libro Selezionato" />
+            <Button fx:id="removeBookButton" mnemonicParsing="false" onAction="#rimuoviLibro" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Rimuovi Libro Selezionato" />
          </children>
       </VBox>
    </children>

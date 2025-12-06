@@ -6,10 +6,11 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="gestioneUtentiPane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.UtenteController">
+<AnchorPane fx:id="gestioneUtentiPane" prefHeight="450.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.UtenteController">
    <children>
       <!-- Lista Utenti -->
       <VBox layoutX="14.0" layoutY="14.0" prefHeight="556.0" prefWidth="648.0" spacing="10.0">
@@ -19,6 +20,12 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+            <HBox prefHeight="29.0" prefWidth="648.0" spacing="10.0">
+               <children>
+                  <Label text="Cerca (Cognome, Matricola):" />
+                  <TextField fx:id="userSearchField" prefHeight="26.0" prefWidth="271.0" promptText="Cerca..." />
+               </children>
+            </HBox>
             <TableView fx:id="userTable1" prefHeight="480.0" prefWidth="648.0">
                <columns>
                   <TableColumn fx:id="surnameClm1" prefWidth="150.0" text="Cognome" />
@@ -42,9 +49,9 @@
             <TextField fx:id="surnameField" promptText="Cognome" />
             <TextField fx:id="codeField" promptText="Matricola" />
             <TextField fx:id="mailField" promptText="nome@unisa.it" />
-            <Button fx:id="addUserButton" mnemonicParsing="false" onAction="#aggiungiUtente" text="Conferma" />
-            <Button fx:id="modifyUserButton" mnemonicParsing="false" onAction="#modificaUtente" text="Modifica Utente Selezionato" />
-            <Button fx:id="removeUserButton" mnemonicParsing="false" onAction="#rimuoviUtente" text="Rimuovi Utente Selezionato" />
+            <Button fx:id="addUserButton" mnemonicParsing="false" onAction="#aggiungiUtente" prefWidth="200.0" style="-fx-background-color: #C0E3AF; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Conferma" />
+            <Button fx:id="modifyUserButton" mnemonicParsing="false" onAction="#modificaUtente" prefWidth="200.0" text="Modifica Utente Selezionato" />
+            <Button fx:id="removeUserButton" mnemonicParsing="false" onAction="#rimuoviUtente" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Rimuovi Utente Selezionato" />
          </children>
       </VBox>
    </children>

@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -46,6 +47,10 @@ public class UtenteController implements Initializable {
     private Button modifyUserButton;
     @FXML
     private Button removeUserButton;
+    @FXML
+    private AnchorPane gestioneUtentiPane;
+    @FXML
+    private TextField userSearchField;
 
     /**
      * Initializes the controller class.
