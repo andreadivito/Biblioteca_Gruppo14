@@ -1,0 +1,4 @@
+var classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestioneinterfaccia_1_1_prestito_attivo_controller =
+[
+    [ "initialize", "classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestioneinterfaccia_1_1_prestito_attivo_controller.html#ad30a175916590d697c8ffab46e8b1c7a", null ]
+];
