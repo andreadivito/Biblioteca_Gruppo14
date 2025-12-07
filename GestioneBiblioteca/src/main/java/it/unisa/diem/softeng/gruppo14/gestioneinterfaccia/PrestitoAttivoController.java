@@ -16,9 +16,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 
 /**
- * FXML Controller class
- *
- * @author gany
+ * @brief Classe che gestisce l'interfaccia dei prestiti attivi.
+ * 
+ * La classe gestisce le azioni relative alla visualizzazione e manipolazione 
+ * dei prestiti attivi. Permette di vedere i prestiti in corso e rimuovere un prestito.
+ * 
+ * @author gruppo14 
  */
 public class PrestitoAttivoController implements Initializable {
 
@@ -36,8 +39,18 @@ public class PrestitoAttivoController implements Initializable {
     private Button rimuoviPBtn;
 
     /**
-     * Initializes the controller class.
+     * @brief Inizializza il controller.
+     * 
+     * Il metodo inizializza gli elementi dell'interfaccia utente e 
+     * prepara la logica per le azioni relative 
+     * alla gestione della lista dei prestiti.
+     * 
+     * @param[in] url Percorso del file FXML associato al controller.
+     * @param[in] rb Collezione di risorse localizzate per l'applicazione.
+     * 
+     * @post Gli attributi non statici sono stati inizializzati.
      */
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

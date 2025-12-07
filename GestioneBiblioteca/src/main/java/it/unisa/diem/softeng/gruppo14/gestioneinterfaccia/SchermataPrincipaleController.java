@@ -13,9 +13,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.MenuItem;
 
 /**
- * FXML Controller class
+ * @brief Classe che gestisce l'interfaccia principale dell'applicazione.
+ * 
+ * La classe gestisce le azioni relative all'interfaccia principale 
+ * dell'applicazione. Permette di interagire con le varie schermate
+ * e di salvare l'archivio su un file.
  *
- * @author gany
+ * @author gruppo14
  */
 public class SchermataPrincipaleController implements Initializable {
 
@@ -23,7 +27,16 @@ public class SchermataPrincipaleController implements Initializable {
     private MenuItem salvaBtn;
 
     /**
-     * Initializes the controller class.
+     * @brief Inizializza il controller.
+     * 
+     * Il metodo inizializza gli elementi dell'interfaccia utente e 
+     * prepara la logica per le azioni relative 
+     * alla gestione dell'intefaccia principale.
+     * 
+     * @param[in] url Percorso del file FXML associato al controller.
+     * @param[in] rb Collezione di risorse localizzate per l'applicazione.
+     * 
+     * @post Gli attributi non statici sono stati inizializzati.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

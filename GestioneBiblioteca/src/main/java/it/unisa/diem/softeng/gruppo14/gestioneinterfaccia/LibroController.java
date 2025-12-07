@@ -17,13 +17,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 /**
- * @brief Classe che gestisce l'interfaccia di visualizzazione dei libri presenti nell'archivio.
+ * @brief Classe che gestisce l'interfaccia dei libri presenti nell'archivio.
  * 
  * La classe gestisce le azioni relative alla visualizzazione e manipolazione
  * dei dati dei libri, come l'aggiunta, la modifica e la rimozione 
  * dei libri nella tabella.
  *
- * @author gruppo 14
+ * @author gruppo14
  */
 public class LibroController implements Initializable {
 
@@ -64,7 +64,8 @@ public class LibroController implements Initializable {
      * @brief Inizializza il controller.
      * 
      * Il metodo inizializza gli elementi dell'interfaccia utente e 
-     * prepara la logica per le azioni dell'utente 
+     * prepara la logica per le azioni relative 
+     * alla gestione della lista dei libri.
      * 
      * @param[in] url Percorso del file FXML associato al controller.
      * @param[in] rb Collezione di risorse localizzate per l'applicazione.
