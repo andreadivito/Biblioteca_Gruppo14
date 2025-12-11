@@ -29,7 +29,8 @@ public class ComparatoreUtenti implements Comparator<Utente>{
      */
     @Override
     public int compare(Utente o1, Utente o2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // Ancora da implementare
+        return 0;
     }
     
 }
