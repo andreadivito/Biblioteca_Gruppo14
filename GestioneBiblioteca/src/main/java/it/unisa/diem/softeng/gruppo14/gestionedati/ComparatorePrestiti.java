@@ -27,7 +27,7 @@ public class ComparatorePrestiti implements Comparator<Prestito>{
      */
     @Override
     public int compare(Prestito o1, Prestito o2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 0;
     }
     
 }
