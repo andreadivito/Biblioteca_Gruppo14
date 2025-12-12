@@ -158,7 +158,7 @@ public class LibroTest {
     public void testDecrementaCopie() {
         System.out.println("decrementaCopie");
         libro.decrementaCopie();
-        int expResult = 2;
+        int expResult = 4;
         assertEquals(expResult, libro.getNumCopie());
     }
 
@@ -178,7 +178,7 @@ public class LibroTest {
     public void testIncrementaCopie() {
         System.out.println("incrementaCopie");
         libro.incrementaCopie();
-        int expResult = 4;
+        int expResult = 6;
         assertEquals(expResult, libro.getNumCopie());
     }
     

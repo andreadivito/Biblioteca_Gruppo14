@@ -40,6 +40,10 @@
              */
             public Prestito(Libro libro, Utente utente, LocalDate dataRestituzione){
 
+                this.libro = libro;
+                this.utente = utente;
+                this.dataRestituzione = dataRestituzione;
+                
             }
 
             /**
@@ -112,7 +116,7 @@
              */
             public boolean verificaRitardo(){
 
-                return false;
+                return LocalDate.now().isAfter(dataRestituzione);
 
             }
 

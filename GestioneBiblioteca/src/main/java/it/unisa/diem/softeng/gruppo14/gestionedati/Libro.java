@@ -46,7 +46,10 @@ public class Libro {
      */
     public Libro(String titolo, int annoPubblicazione, String ISBN, int numCopie){
         
-        
+        this.titolo = titolo;
+        this.annoPubblicazione = annoPubblicazione;
+        this.ISBN = ISBN;
+        this.numCopie = numCopie;
         
     }
     
@@ -159,7 +162,9 @@ public class Libro {
      */
     public void decrementaCopie(){
         
-        
+        if(this.numCopie > 0){
+            this.numCopie--;
+        }
         
     }
  
@@ -173,6 +178,7 @@ public class Libro {
      */
     public void incrementaCopie(){
         
+        this.numCopie++;
         
     }
     

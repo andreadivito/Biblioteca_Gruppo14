@@ -41,7 +41,10 @@ public class Utente {
      */
     public Utente(String nome, String cognome, String matricola, String email){
         
-        
+        this.nome = nome;
+        this.cognome = cognome;
+        this.matricola = matricola;
+        this.email = email;
         
     }
     
