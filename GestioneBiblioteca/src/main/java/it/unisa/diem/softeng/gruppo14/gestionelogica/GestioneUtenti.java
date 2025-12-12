@@ -100,7 +100,7 @@ public class GestioneUtenti {
      */
     public List<Utente> cercaUtente(String testo){
         
-        return null;
+        return new ArrayList<Utente>();
         
     }
     

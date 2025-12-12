@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.unisa.diem.softeng.gruppo14.gestionedati;
 
 import org.junit.jupiter.api.AfterEach;
@@ -14,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author andre
+ * @author gruppo14
  */
 public class UtenteTest {
     
@@ -35,10 +30,12 @@ public class UtenteTest {
      */
     @Test
     public void testGetNome() {
+        
         System.out.println("getNome");
         String expResult = "Mario";
         String result = utente.getNome();
         assertEquals(expResult, result);
+        
     }
 
     /**
@@ -46,10 +43,12 @@ public class UtenteTest {
      */
     @Test
     public void testGetCognome() {
+        
         System.out.println("getCognome");
         String expResult = "Rossi";
         String result = utente.getCognome();
         assertEquals(expResult, result);
+        
     }
 
     /**
@@ -57,10 +56,12 @@ public class UtenteTest {
      */
     @Test
     public void testGetMatricola() {
+        
         System.out.println("getMatricola");
         String expResult = "0612700001";
         String result = utente.getMatricola();
         assertEquals(expResult, result);
+        
     }
 
     /**
@@ -68,10 +69,12 @@ public class UtenteTest {
      */
     @Test
     public void testGetEmail() {
+        
         System.out.println("getEmail");
         String expResult = "m.rossi@studenti.unisa.it";
         String result = utente.getEmail();
         assertEquals(expResult, result);
+        
     }
 
     /**
@@ -79,11 +82,13 @@ public class UtenteTest {
      */
     @Test
     public void testSetNome() {
+        
         System.out.println("setNome");
         String nome = "Luigi";
         utente.setNome(nome);
         String expResult = "Luigi";
         assertEquals(expResult, utente.getNome());
+        
     }
 
     /**
@@ -91,11 +96,13 @@ public class UtenteTest {
      */
     @Test
     public void testSetCognome() {
+        
         System.out.println("setCognome");
         String cognome = "Grigi";
         utente.setCognome(cognome);
         String expResult = "Grigi";
         assertEquals(expResult, utente.getCognome());
+        
     }
 
     /**
@@ -103,11 +110,13 @@ public class UtenteTest {
      */
     @Test
     public void testSetMatricola() {
+        
         System.out.println("setMatricola");
         String matricola = "0612700002";
         utente.setMatricola(matricola);
         String expResult = "0612700002";
         assertEquals(expResult, utente.getMatricola());
+        
     }
 
     /**
@@ -115,11 +124,13 @@ public class UtenteTest {
      */
     @Test
     public void testSetEmail() {
+        
         System.out.println("setEmail");
         String email = "l.grigi@studenti.unisa.it";
         utente.setEmail(email);
         String expResult = "l.grigi@studenti.unisa.it";
         assertEquals(expResult, utente.getEmail());
+        
     }
 
     /**
@@ -127,10 +138,12 @@ public class UtenteTest {
      */
     @Test
     public void testToString() {
+        
         System.out.println("toString");
         String expResult = "Utente{nome=Mario, cognome=Rossi, matricola=0612700001, email=m.rossi@studenti.unisa.it}";
         String result = utente.toString();
         assertEquals(expResult, result);
+        
     }
     
 }
