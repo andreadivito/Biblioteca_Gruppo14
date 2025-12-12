@@ -1,43 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="gestionePrestitiPane" prefHeight="450.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.PrestitoAttivoController">
+<AnchorPane fx:id="gestionePrestitiPane" prefHeight="57.0" prefWidth="890.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.PrestitoAttivoController">
    <children>
+      <ImageView fitHeight="592.0" fitWidth="273.0" layoutX="-18.0" layoutY="-20.0" opacity="0.65" pickOnBounds="true" style="-fx-background-radius: 20;">
+         <image>
+            <Image url="@back.png" />
+         </image>
+      </ImageView>
       <!-- Prestiti Attivi -->
-      <VBox layoutX="14.0" layoutY="14.0" prefHeight="556.0" prefWidth="648.0" spacing="10.0">
+      <VBox layoutX="260.0" layoutY="14.0" maxWidth="-Infinity" prefHeight="556.0" prefWidth="618.0" spacing="10.0" style="-fx-background-radius: 30;">
          <children>
-            <Label text="Prestiti in Corso">
+            <Label prefHeight="30.0" prefWidth="227.0" text=" Prestiti in Corso">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@loan.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Label>
-            <TableView fx:id="LoanTable" prefHeight="480.0" prefWidth="648.0">
+            <TableView fx:id="LoanTable" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="470.0" prefWidth="618.0" style="-fx-background-radius: 30; -fx-background-color: #d9d9d9; -fx-padding: -2;">
                <columns>
-                  <TableColumn fx:id="loanBookTitleClm" prefWidth="217.0" text="Titolo Libro" />
-                  <TableColumn fx:id="loanUserClm" prefWidth="214.0" text="Beneficiario" />
-                  <TableColumn fx:id="dateLimitClm" prefWidth="216.0" text="Data Restituzione Prevista" />
+                  <TableColumn fx:id="loanBookTitleClm" prefWidth="217.0" style="-fx-background-color: #999999;" text="Titolo Libro" />
+                  <TableColumn fx:id="loanUserClm" prefWidth="214.0" style="-fx-background-color: #999999;" text="Beneficiario" />
+                  <TableColumn fx:id="dateLimitClm" prefWidth="216.0" style="-fx-background-color: #999999;" text="Data Restituzione Prevista" />
                </columns>
             </TableView>
          </children>
       </VBox>
 
       <!-- Azioni Prestiti -->
-      <VBox layoutX="678.0" layoutY="25.0" prefHeight="556.0" prefWidth="200.0" spacing="25.0">
+      <VBox alignment="CENTER" layoutX="20.0" layoutY="46.0" prefHeight="110.0" prefWidth="215.0" spacing="18.0" style="-fx-background-color: rgba(153, 153, 153, 0.8); -fx-background-radius: 30;">
          <children>
-            <Label text="Azioni Prestiti">
+            <Label prefHeight="18.0" prefWidth="41.0" text="Azioni">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="rimuoviPBtn" mnemonicParsing="false" onAction="#rimuoviPrestitoBtn" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Rimuovi Prestito Selezionato" />
+            <Button fx:id="rimuoviPBtn" alignment="CENTER" mnemonicParsing="false" onAction="#rimuoviPrestitoBtn" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-background-radius: 50;" text="   Rimuovi">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@minus-sign.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
+         <padding>
+            <Insets bottom="20.0" top="8.0" />
+         </padding>
       </VBox>
    </children>
 </AnchorPane>

@@ -1,30 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="nuovoPrestitoPane" minHeight="580.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.NuovoPrestitoController">
+<AnchorPane fx:id="nuovoPrestitoPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="890.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.NuovoPrestitoController">
    <children>
+      <ImageView fitHeight="592.0" fitWidth="273.0" layoutX="-18.0" layoutY="-20.0" opacity="0.65" pickOnBounds="true" style="-fx-background-radius: 20;">
+         <image>
+            <Image url="@back.png" />
+         </image>
+      </ImageView>
       <!-- Seleziona Utente e Libro -->
-      <VBox layoutX="14.0" layoutY="14.0" prefHeight="530.0" prefWidth="500.0" spacing="10.0">
+      <VBox layoutX="261.0" layoutY="14.0" prefHeight="556.0" prefWidth="617.0" spacing="10.0">
          <children>
             <Label text="Seleziona Utente">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Label>
-            <TableView fx:id="userTable" prefHeight="245.0" prefWidth="486.0">
+            <TableView fx:id="userTable" prefHeight="222.0" prefWidth="573.0" style="-fx-background-radius: 30; -fx-background-color: #d9d9d9; -fx-padding: -2;">
                <columns>
-                  <TableColumn fx:id="surnameClm" prefWidth="118.18180847167969" text="Cognome" />
-                  <TableColumn fx:id="nameClm" prefWidth="114.31816864013672" text="Nome" />
-                  <TableColumn fx:id="codeClm" prefWidth="118.46537780761719" text="Matricola" />
-                  <TableColumn fx:id="mailClm" prefWidth="148.78363037109375" text="Email" />
+                  <TableColumn fx:id="surnameClm" prefWidth="129.22454833984375" style="-fx-background-color: #999999;" text="Cognome" />
+                  <TableColumn fx:id="nameClm" prefWidth="115.77540588378906" style="-fx-background-color: #999999;" text="Nome" />
+                  <TableColumn fx:id="codeClm" prefWidth="172.9132080078125" style="-fx-background-color: #999999;" text="Matricola" />
+                  <TableColumn fx:id="mailClm" prefWidth="205.0" style="-fx-background-color: #999999;" text="Email" />
                </columns>
             </TableView>
 
@@ -32,12 +47,19 @@
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@open-book.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Label>
-            <TableView fx:id="bookTable" prefHeight="250.0" prefWidth="420.0">
+            <TableView fx:id="bookTable" prefHeight="225.0" prefWidth="573.0" style="-fx-background-radius: 30; -fx-background-color: #d9d9d9; -fx-padding: -2;">
                <columns>
-                  <TableColumn fx:id="titleClm" prefWidth="164.71855926513672" text="Titolo" />
-                  <TableColumn fx:id="authorClm" prefWidth="176.28146362304688" text="Autore" />
-                  <TableColumn fx:id="numCopiesClm" prefWidth="159.30743408203125" text="Copie Disponibili" />
+                  <TableColumn fx:id="titleClm" prefWidth="172.1497344970703" style="-fx-background-color: #999999;" text="Titolo" />
+                  <TableColumn fx:id="authorClm" prefWidth="207.85025024414062" style="-fx-background-color: #999999;" text="Autore" />
+                  <TableColumn fx:id="numCopiesClm" prefWidth="241.8681640625" style="-fx-background-color: #999999;" text="Copie Disponibili" />
                   <TableColumn fx:id="pubYearClm" visible="false" />
                   <TableColumn fx:id="isbnClm" visible="false" />
                </columns>
@@ -46,17 +68,34 @@
       </VBox>
 
       <!-- Aggiungi Prestito -->
-      <VBox layoutX="525.0" layoutY="14.0" prefHeight="556.0" prefWidth="315.0" spacing="10.0">
+      <VBox alignment="CENTER" layoutX="11.0" layoutY="46.0" prefHeight="164.0" prefWidth="232.0" spacing="10.0" style="-fx-background-color: rgba(153, 153, 153, 0.8); -fx-background-radius: 30;">
          <children>
             <Label text="Aggiungi Prestito">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Label>
-            <Label text="Data Restituzione Prevista (GG/MM/AAAA):" />
-            <TextField fx:id="dateLimitField" maxWidth="300.0" prefWidth="300.0" promptText="es. 31/12/2025" />
-            <Button fx:id="aggiungiPBtn" mnemonicParsing="false" onAction="#aggiungiPrestitoBtn" prefWidth="300.0" style="-fx-background-color: #C0E3AF; -fx-border-radius: 3; -fx-border-color: #9E9E9E;" text="Registra Nuovo Prestito" />
+            <Label text="Data Restituzione  (GG/MM/AAAA):" />
+            <TextField fx:id="dateLimitField" alignment="CENTER" maxWidth="200.0" prefWidth="200.0" promptText="es. 31/12/2025" style="-fx-background-radius: 50;" />
+            <Button fx:id="aggiungiPBtn" mnemonicParsing="false" onAction="#aggiungiPrestitoBtn" prefWidth="200.0" style="-fx-background-color: #C0E3AF; -fx-background-radius: 50;" text="Registra">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@check-mark.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
+         <padding>
+            <Insets bottom="20.0" top="20.0" />
+         </padding>
       </VBox>
    </children>
 </AnchorPane>
