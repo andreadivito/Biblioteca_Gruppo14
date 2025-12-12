@@ -28,8 +28,8 @@ public class ComparatoreLibriTest {
 
     @Test
     public void testCompare(){
-        o1 = new Libro("Il Singore degli Anelli", 0, null, 0); // Titolo, anno pubblicazione, ISBN, numero copie
-        o2 = new Libro("Il Signore degli Anelli", 0, null, 0);
+        o1 = new Libro("Il Signore degli Anelli", 1954, null, 0); // Titolo, anno pubblicazione, ISBN, numero copie
+        o2 = new Libro("Il Signore degli Anelli", 1954, null, 0);
         int expResult = 0;
         int result = c.compare(o1, o2);   
         assertEquals(expResult, result);
@@ -40,8 +40,8 @@ public class ComparatoreLibriTest {
      */
      @Test
     public void testCompare1() {
-        o1 = new Libro("Il Signore degli Anelli", 0, null, 0);  // Titolo, anno pubblicazione, ISBN, numero copie
-        o2 = new Libro("Harry Potter", 0, null, 0);
+        o1 = new Libro("Il Signore degli Anelli", 1954, null, 0);  // Titolo, anno pubblicazione, ISBN, numero copie
+        o2 = new Libro("Harry Potter", 1997, null, 0);
         int result1 = c.compare(o1, o2);
         assertTrue(result1 > 0);  
         
@@ -49,16 +49,16 @@ public class ComparatoreLibriTest {
     
     @Test
     public void testCompare2() {
-        o1 = new Libro("Harry Potter", 0, null, 0);
-        o2 = new Libro("Il Signore degli Anelli", 0, null, 0);  // Titolo, anno pubblicazione, ISBN, numero copie
+        o1 = new Libro("Harry Potter", 1997, null, 0);
+        o2 = new Libro("Il Signore degli Anelli", 1954, null, 0);  // Titolo, anno pubblicazione, ISBN, numero copie
         int result2 = c.compare(o1, o2);
         assertTrue(result2 < 0);
     }
     
     @Test
     public void testCompare3() {
-        o1 = new Libro("il signore degli anelli", 0, null, 0);
-        o2 = new Libro("Il Signore degli Anelli", 0, null, 0);  // Titolo, anno pubblicazione, ISBN, numero copie
+        o1 = new Libro("il signore degli anelli", 1954, null, 0);
+        o2 = new Libro("Il Signore degli Anelli", 1954, null, 0);  // Titolo, anno pubblicazione, ISBN, numero copie
         int expResult = 0;
         int result3 = c.compare(o1, o2);
         assertEquals(expResult, result3);
