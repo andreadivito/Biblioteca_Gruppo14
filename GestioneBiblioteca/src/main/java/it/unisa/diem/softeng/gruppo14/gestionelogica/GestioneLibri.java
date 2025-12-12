@@ -102,7 +102,7 @@ public class GestioneLibri {
      */
     public List<Libro> cercaLibro(String testo){
         
-        return null;
+        return new ArrayList<Libro>();
         
     }
     
