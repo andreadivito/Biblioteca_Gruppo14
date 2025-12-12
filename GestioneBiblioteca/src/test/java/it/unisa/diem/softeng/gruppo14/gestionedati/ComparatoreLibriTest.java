@@ -64,4 +64,20 @@ public class ComparatoreLibriTest {
         assertEquals(expResult, result3);
     }
     
+    @Test
+    public void testCompare4() {
+        o1 = new Libro("Il Signore degli Anelli", 1970, null, 0);
+        o2 = new Libro("Il Signore degli Anelli", 1954, null, 0);  // Titolo, anno pubblicazione, ISBN, numero copie
+        int result4 = c.compare(o1, o2);
+        assertTrue(result4 < 0);
+    }
+    
+    @Test
+    public void testCompare5() {
+        o1 = new Libro("Il Signore degli Anelli", 1954, null, 0);
+        o2 = new Libro("Il Signore degli Anelli", 1970, null, 0);  // Titolo, anno pubblicazione, ISBN, numero copie
+        int result5 = c.compare(o1, o2);
+        assertTrue(result5 > 0);
+    }
+    
 }

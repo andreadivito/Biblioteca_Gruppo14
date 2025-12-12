@@ -29,8 +29,13 @@ public class ComparatoreUtenti implements Comparator<Utente>{
      */
     @Override
     public int compare(Utente o1, Utente o2) {
-        // Ancora da implementare
-        return 0;
+       if(o1.getCognome().equalsIgnoreCase(o2.getCognome())){
+           if(o1.getNome().equalsIgnoreCase(o2.getNome())){
+               return o1.getMatricola().compareToIgnoreCase(o2.getMatricola());
+           }
+           return o1.getNome().compareToIgnoreCase(o2.getNome());
+       }
+       return o1.getCognome().compareToIgnoreCase(o2.getCognome());
     }
     
 }

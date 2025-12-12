@@ -29,11 +29,10 @@ public class ComparatoreLibri implements Comparator<Libro>{
      */
     @Override
     public int compare(Libro o1, Libro o2) {
-   //     if(o1.getTitolo().equals(o2.getTitolo())){
-    //        return Integer.compare(o2.getAnnoPubblicazione(), o1.getAnnoPubblicazione());
-     //   } 
-     //   return o1.getTitolo().compareToIgnoreCase(o2.getTitolo());
-     return 0;
+        if(o1.getTitolo().equals(o2.getTitolo())){
+           return Integer.compare(o2.getAnnoPubblicazione(), o1.getAnnoPubblicazione());
+        } 
+        return o1.getTitolo().compareToIgnoreCase(o2.getTitolo());
     }
     
 }

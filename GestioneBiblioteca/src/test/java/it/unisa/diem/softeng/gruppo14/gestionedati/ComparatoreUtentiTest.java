@@ -108,12 +108,12 @@ public class ComparatoreUtentiTest {
      @Test
     public void testCompare7() {
        
-        o1 = new Utente ("andrea" , "di vito", "002", "a1@gmail.com");
+        o1 = new Utente ("andrea" , "di vito", "001", "a1@gmail.com");
         o2 = new Utente ("Andrea" , "Di Vito", "001", "a2@gmail.com");
         int expResult = 0;
         int result7 = c.compare(o1, o2);
         assertEquals(expResult, result7);
-        
+  
     }
     
 }

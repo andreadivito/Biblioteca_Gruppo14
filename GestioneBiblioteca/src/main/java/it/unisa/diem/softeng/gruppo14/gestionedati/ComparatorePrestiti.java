@@ -27,7 +27,7 @@ public class ComparatorePrestiti implements Comparator<Prestito>{
      */
     @Override
     public int compare(Prestito o1, Prestito o2) {
-        return 0;
+        return o1.getDataRestituzione().compareTo(o2.getDataRestituzione());
     }
     
 }
