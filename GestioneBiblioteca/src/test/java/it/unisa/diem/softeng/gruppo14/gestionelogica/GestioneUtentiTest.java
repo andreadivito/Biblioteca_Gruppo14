@@ -157,7 +157,7 @@ public class GestioneUtentiTest {
         gestioneUtenti.aggiungiUtente(u);
         List<Utente> result = gestioneUtenti.cercaUtente(testo);
         assertFalse(result.isEmpty());
-        assertEquals("Aniello", result.get(0).getCognome());
+        assertEquals("De Marinis", result.get(0).getCognome());
         
     }
     
@@ -170,7 +170,7 @@ public class GestioneUtentiTest {
         gestioneUtenti.aggiungiUtente(u);
         List<Utente> result = gestioneUtenti.cercaUtente(testo);
         assertFalse(result.isEmpty());
-        assertEquals("Aniello", result.get(0).getMatricola());
+        assertEquals("0612708860", result.get(0).getMatricola());
         
     }
     
@@ -183,20 +183,19 @@ public class GestioneUtentiTest {
         gestioneUtenti.aggiungiUtente(u);
         List<Utente> result = gestioneUtenti.cercaUtente(testo);
         assertFalse(result.isEmpty());
-        assertEquals("Aniello", result.get(0).getEmail());
+        assertEquals("a.demarinis@studenti.unisa.it", result.get(0).getEmail());
         
     }
     
     @Test
     public void testCercaUtente4() {
         
-        System.out.println("cercaUtente - Stringa vuota");
+        System.out.println("cercaUtente - Utente non presente");
         String testo = "Non presente";
         Utente u = new Utente("Aniello", "De Marinis", "0612708860", "a.demarinis@studenti.unisa.it");
         gestioneUtenti.aggiungiUtente(u);
         List<Utente> result = gestioneUtenti.cercaUtente(testo);
-        assertFalse(result.isEmpty());
-        assertEquals("Aniello", gestioneUtenti.getUtenti());
+        assertTrue(result.isEmpty());
         
     }
     
@@ -208,7 +207,8 @@ public class GestioneUtentiTest {
         Utente u = new Utente("Aniello", "De Marinis", "0612708860", "a.demarinis@studenti.unisa.it");
         gestioneUtenti.aggiungiUtente(u);
         List<Utente> result = gestioneUtenti.cercaUtente(testo);
-        assertTrue(result.isEmpty());
+        assertFalse(result.isEmpty());
+        assertEquals(result, gestioneUtenti.getUtenti());
         
     }
     
