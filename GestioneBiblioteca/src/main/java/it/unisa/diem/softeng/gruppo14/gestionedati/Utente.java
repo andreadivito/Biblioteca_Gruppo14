@@ -30,7 +30,6 @@ public class Utente {
      * @brief Costruttore.
      * 
      * Inizializza un nuovo utente con i dati anagrafici specificati.
-     * Utilizza `assert` per verificare che i dati inseriti siano validi.
      * 
      * @param[in] nome Il nome dell'utente.
      * @param[in] cognome Il cognome dell'utente.

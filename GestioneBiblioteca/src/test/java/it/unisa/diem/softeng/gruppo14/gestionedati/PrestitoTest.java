@@ -1,6 +1,7 @@
 package it.unisa.diem.softeng.gruppo14.gestionedati;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,7 +27,8 @@ public class PrestitoTest {
     @BeforeEach
     public void setUp() {
         
-        libro = new Libro("Il Signore degli Anelli", 1954, "978-88-12345", 5);
+        
+        libro = new Libro("Il Signore degli Anelli", Arrays.asList("J.R.R. Tolkien"), 1954, "978-88-12345", 5);
         utente = new Utente("Mario", "Rossi", "0612700001", "m.rossi@studenti.unisa.it");
         dataRestituzione = LocalDate.now().plusDays(30);
         prestito = new Prestito(libro, utente, dataRestituzione);
@@ -79,7 +81,7 @@ public class PrestitoTest {
     public void testSetLibro() {
         
         System.out.println("setLibro");
-        Libro nuovoLibro = new Libro("Harry Potter", 1997, "978-88-67890", 3);
+        Libro nuovoLibro = new Libro("Harry Potter", Arrays.asList("J.K. Rowling"), 1997, "978-88-67890", 3);
         prestito.setLibro(nuovoLibro);
         Libro expResult = nuovoLibro;
         assertEquals(expResult, prestito.getLibro());
@@ -130,7 +132,7 @@ public class PrestitoTest {
     @Test
     public void testVerificaRitardoTrue() {
         
-        System.out.println("verificaRitardoFalse");
+        System.out.println("verificaRitardoTrue"); 
         prestito.setDataRestituzione(LocalDate.now().minusDays(1));
         boolean expResult = true;
         boolean result = prestito.verificaRitardo();

@@ -2,6 +2,7 @@ package it.unisa.diem.softeng.gruppo14.gestionedati;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,14 +17,16 @@ import static org.junit.jupiter.api.Assertions.*;
 public class LibroTest {
     
     private Libro libro;
+    private List<String> autori; 
     
     public LibroTest() {
     }
    
     @BeforeEach
     public void setUp() {
-        
-        libro = new Libro("Il Signore degli Anelli", 1954, "978-88-12345", 5);
+        autori = new ArrayList<>();
+        autori.add("J.R.R. Tolkien");
+        libro = new Libro("Il Signore degli Anelli", autori, 1954, "978-88-12345", 5);
         
     }
     
@@ -47,12 +50,9 @@ public class LibroTest {
     public void testGetAutori() {
         
         System.out.println("getAutori");
-        List<String> autori = new ArrayList<>();
-        autori.add("Tolkien");
-        libro.setAutori(autori);
-        List<String> expResult = libro.getAutori();
-        assertEquals(1, expResult.size());
-        assertEquals("Tolkien", expResult.get(0));
+        List<String> result = libro.getAutori();
+        assertEquals(1, result.size());
+        assertEquals("J.R.R. Tolkien", result.get(0));
         
     }
 
@@ -116,10 +116,10 @@ public class LibroTest {
     public void testSetAutori() {
         
         System.out.println("setAutori");
-        List<String> autori = new ArrayList<>();
-        autori.add("J. K. Rowling");
-        libro.setAutori(autori);
-        List<String> expResult = autori;
+        List<String> nuoviAutori = new ArrayList<>();
+        nuoviAutori.add("J. K. Rowling");
+        libro.setAutori(nuoviAutori);
+        List<String> expResult = nuoviAutori;
         assertEquals(expResult, libro.getAutori());
         
     }
@@ -218,5 +218,6 @@ public class LibroTest {
         assertEquals(expResult, result);
         
     }
+    
     
 }

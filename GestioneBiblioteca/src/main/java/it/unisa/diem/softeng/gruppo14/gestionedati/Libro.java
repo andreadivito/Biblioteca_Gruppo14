@@ -35,18 +35,19 @@ public class Libro {
      * @brief Costruttore
      * 
      * Inizializza un nuovo libro con le informazioni specificate.
-     * Utilizza `assert` per verificare che i dati inseriti siano validi.
      * 
      * @param[in] titolo Titolo del libro.
+     * @param[in] autori Lista degli autori.
      * @param[in] annoPubblicazione Anno di pubblicazione del libro.
      * @param[in] ISBN ISBN del libro.
      * @param[in] numCopie Numero di copie del libro.
      * 
      * @post Viene creato un oggetto `Libro` con i campi inizializzati.
      */
-    public Libro(String titolo, int annoPubblicazione, String ISBN, int numCopie){
+    public Libro(String titolo, List<String> autori, int annoPubblicazione, String ISBN, int numCopie){
         
         this.titolo = titolo;
+        this.autori = autori;
         this.annoPubblicazione = annoPubblicazione;
         this.ISBN = ISBN;
         this.numCopie = numCopie;

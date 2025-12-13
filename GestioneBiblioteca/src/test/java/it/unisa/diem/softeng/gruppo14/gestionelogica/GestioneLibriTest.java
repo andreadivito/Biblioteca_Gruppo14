@@ -4,16 +4,12 @@ import it.unisa.diem.softeng.gruppo14.gestionedati.Libro;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- *
- * @author gany
+ * @author gruppo14
  */
 public class GestioneLibriTest {
     
@@ -38,28 +34,22 @@ public class GestioneLibriTest {
         
     }
 
-    /**
-     * Test of getLibri method, of class GestioneLibri.
-     */
     @Test
     public void testGetLibri() {
         
         System.out.println("getLibri");
-        Libro l = new Libro("Harry Potter", 1997, "978-88-67890", 1);
+        Libro l = new Libro("Harry Potter", Arrays.asList("J.K. Rowling"), 1997, "978-88-67890", 1);
         gestioneLibri.aggiungiLibro(l);
         List<Libro> expResult = Arrays.asList(l);
         assertEquals(expResult, gestioneLibri.getLibri());
         
     }
 
-    /**
-     * Test of aggiungiLibro method, of class GestioneLibri.
-     */
     @Test
     public void testAggiungiLibro() {
         
         System.out.println("aggiungiLibro");
-        Libro l = new Libro("Harry Potter", 1997, "978-88-67890", 1);
+        Libro l = new Libro("Harry Potter", Arrays.asList("J.K. Rowling"), 1997, "978-88-67890", 1);
         gestioneLibri.aggiungiLibro(l);
         assertFalse(gestioneLibri.getLibri().isEmpty());
         assertTrue(gestioneLibri.getLibri().contains(l));
@@ -67,16 +57,13 @@ public class GestioneLibriTest {
         
     }
 
-    /**
-     * Test of modificaLibro method, of class GestioneLibri.
-     */
     @Test
     public void testModificaLibro1() {
         
         System.out.println("modificaLibro - Titolo");
-        Libro l1 = new Libro("Il Trono di Spade", 0, "", 0);
+        Libro l1 = new Libro("Il Trono di Spade", Arrays.asList("G.R.R. Martin"), 1996, "978-88-11111", 1);
         gestioneLibri.aggiungiLibro(l1);
-        Libro l2 = new Libro("Il Trono di Spade 2", 0, "", 0);
+        Libro l2 = new Libro("Il Trono di Spade 2", Arrays.asList("G.R.R. Martin"), 1996, "978-88-11111", 1);
         gestioneLibri.modificaLibro(l1, l2);
         assertEquals("Il Trono di Spade 2", l1.getTitolo());
         
@@ -86,9 +73,9 @@ public class GestioneLibriTest {
     public void testModificaLibro2() {
         
         System.out.println("modificaLibro - Anno");
-        Libro l1 = new Libro("Il Trono di Spade", 1996, "", 0);
+        Libro l1 = new Libro("Il Trono di Spade", Arrays.asList("G.R.R. Martin"), 1996, "978-88-11111", 1);
         gestioneLibri.aggiungiLibro(l1);
-        Libro l2 = new Libro("Il Trono di Spade", 2008, "", 0);
+        Libro l2 = new Libro("Il Trono di Spade", Arrays.asList("G.R.R. Martin"), 2008, "978-88-11111", 1);
         gestioneLibri.modificaLibro(l1, l2);
         assertEquals(2008, l1.getAnnoPubblicazione());
         
@@ -98,11 +85,11 @@ public class GestioneLibriTest {
     public void testModificaLibro3() {
         
         System.out.println("modificaLibro - ISBN");
-        Libro l1 = new Libro("Il Trono di Spade", 1996, "978-88-67788", 0);
+        Libro l1 = new Libro("Il Trono di Spade", Arrays.asList("G.R.R. Martin"), 1996, "978-88-11111", 1);
         gestioneLibri.aggiungiLibro(l1);
-        Libro l2 = new Libro("Il Trono di Spade", 1996, "978-88-67799", 0);
+        Libro l2 = new Libro("Il Trono di Spade", Arrays.asList("G.R.R. Martin"), 1996, "978-88-11122", 1);
         gestioneLibri.modificaLibro(l1, l2);
-        assertEquals("978-88-67799", l1.getISBN());
+        assertEquals("978-88-11122", l1.getISBN());
         
     }
     
@@ -110,9 +97,9 @@ public class GestioneLibriTest {
     public void testModificaLibro4() {
         
         System.out.println("modificaLibro - Copie");
-        Libro l1 = new Libro("Il Trono di Spade", 1996, "978-88-67788", 3);
+        Libro l1 = new Libro("Il Trono di Spade", Arrays.asList("G.R.R. Martin"), 1996, "978-88-11111", 3);
         gestioneLibri.aggiungiLibro(l1);
-        Libro l2 = new Libro("Il Trono di Spade", 2008, "978-88-67788", 7);
+        Libro l2 = new Libro("Il Trono di Spade", Arrays.asList("G.R.R. Martin"), 1996, "978-88-11111", 7);
         gestioneLibri.modificaLibro(l1, l2);
         assertEquals(7, l1.getNumCopie());
         
@@ -122,43 +109,34 @@ public class GestioneLibriTest {
     public void testModificaLibro5() {
         
         System.out.println("modificaLibro - Autori");
-        Libro l1 = new Libro("Il Trono di Spade", 1996, "978-88-67788", 3);
-        List<String> autori1 = new ArrayList<>();
-        autori1.add("George R. R. Martin");
+        List<String> autori1 = Arrays.asList("George R. R. Martin");
+        Libro l1 = new Libro("Il Trono di Spade", autori1, 1996, "978-88-11122", 3);
         gestioneLibri.aggiungiLibro(l1);
-        Libro l2 = new Libro("Il Trono di Spade", 1996, "978-88-67788", 3);
-        List<String> autori2 = new ArrayList<>();
-        autori2.add("Elio M. García Jr.");
-        autori2.add("Linda Antonsson");
+        List<String> autori2 = Arrays.asList("Elio M. García Jr.", "Linda Antonsson");
+        Libro l2 = new Libro("Il Trono di Spade", autori2, 1996, "978-88-11122", 3);
         gestioneLibri.modificaLibro(l1, l2);
         assertEquals(autori2, l1.getAutori());
         assertEquals(2, l1.getAutori().size());
         
     }
 
-    /**
-     * Test of eliminaLibro method, of class GestioneLibri.
-     */
     @Test
     public void testEliminaLibro() {
         
         System.out.println("eliminaLibro");
-        Libro l = new Libro("Il Trono di Spade", 1996, "978-88-67788", 3);
+        Libro l = new Libro("Il Trono di Spade", Arrays.asList("G.R.R. Martin"), 1996, "978-88-11111", 3);
         gestioneLibri.aggiungiLibro(l);
         gestioneLibri.eliminaLibro(l);
         assertTrue(gestioneLibri.getLibri().isEmpty());
         
     }
 
-    /**
-     * Test of cercaLibro method, of class GestioneLibri.
-     */
     @Test
     public void testCercaLibro1() {
         
         System.out.println("cercaLibro - Titolo");
         String testo = "Signore";
-        Libro l = new Libro("Il Signore degli Anelli", 1954, "978-88-12345", 5); 
+        Libro l = new Libro("Il Signore degli Anelli", Arrays.asList("Tolkien"), 1954, "978-88-12345", 5); 
         gestioneLibri.aggiungiLibro(l);
         List<Libro> result = gestioneLibri.cercaLibro(testo);
         assertFalse(result.isEmpty());
@@ -171,7 +149,7 @@ public class GestioneLibriTest {
         
         System.out.println("cercaLibro - ISBN");
         String testo = "978-88-12";
-        Libro l = new Libro("Il Signore degli Anelli", 1954, "978-88-12345", 5); 
+        Libro l = new Libro("Il Signore degli Anelli", Arrays.asList("Tolkien"), 1954, "978-88-12345", 5); 
         gestioneLibri.aggiungiLibro(l);
         List<Libro> result = gestioneLibri.cercaLibro(testo);
         assertFalse(result.isEmpty());
@@ -184,14 +162,11 @@ public class GestioneLibriTest {
         
         System.out.println("cercaLibro - Autori");
         String testo = "Tolk";
-        Libro l = new Libro("Il Signore degli Anelli", 1954, "978-88-12345", 5);
-        List<String> autori = new ArrayList<>();
-        autori.add("Tolkien");
-        l.setAutori(autori);
+        Libro l = new Libro("Il Signore degli Anelli", Arrays.asList("J.R.R. Tolkien"), 1954, "978-88-12345", 5);
         gestioneLibri.aggiungiLibro(l);
         List<Libro> result = gestioneLibri.cercaLibro(testo);
         assertFalse(result.isEmpty());
-        assertEquals("Tolkien", result.get(0).getAutori());
+        assertEquals("J.R.R. Tolkien", result.get(0).getAutori().get(0));
         
     }
     
@@ -200,7 +175,7 @@ public class GestioneLibriTest {
         
         System.out.println("cercaLibro - Stringa vuota");
         String testo = "";
-        Libro l = new Libro("Il Signore degli Anelli", 1954, "978-88-12345", 5);
+        Libro l = new Libro("Il Signore degli Anelli", Arrays.asList("Tolkien"), 1954, "978-88-12345", 5);
         gestioneLibri.aggiungiLibro(l);
         List<Libro> result = gestioneLibri.cercaLibro(testo);
         assertFalse(result.isEmpty());
@@ -213,7 +188,7 @@ public class GestioneLibriTest {
         
         System.out.println("cercaLibro - Libro non presente");
         String testo = "Non presente";
-        Libro l = new Libro("Il Signore degli Anelli", 1954, "978-88-12345", 5);
+        Libro l = new Libro("Il Signore degli Anelli", Arrays.asList("Tolkien"), 1954, "978-88-12345", 5);
         gestioneLibri.aggiungiLibro(l);
         List<Libro> result = gestioneLibri.cercaLibro(testo);
         assertTrue(result.isEmpty());
