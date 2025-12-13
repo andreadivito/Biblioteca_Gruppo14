@@ -28,7 +28,9 @@ public class GestioneUtenti {
      * @post La lista degli utenti è inizializzata.
      */
     public GestioneUtenti(){
+        
         this.utenti = new ArrayList<>();
+        
     }
     
     /**
@@ -37,7 +39,9 @@ public class GestioneUtenti {
      * @return Lista di oggetti Utente registrati.
      */
     public List<Utente> getUtenti() {
+        
         return utenti;
+        
     }
     
     /**
@@ -52,7 +56,11 @@ public class GestioneUtenti {
      */
     public void aggiungiUtente(Utente u){
         
-        
+        if(u != null){
+            
+            utenti.add(u);
+            
+        }
         
     }
     
