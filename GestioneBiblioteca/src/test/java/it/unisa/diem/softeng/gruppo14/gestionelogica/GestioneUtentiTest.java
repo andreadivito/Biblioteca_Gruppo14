@@ -1,6 +1,10 @@
 package it.unisa.diem.softeng.gruppo14.gestionelogica;
 
+import it.unisa.diem.softeng.gruppo14.gestionedati.Libro;
+import it.unisa.diem.softeng.gruppo14.gestionedati.Prestito;
 import it.unisa.diem.softeng.gruppo14.gestionedati.Utente;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
@@ -127,11 +131,12 @@ public class GestioneUtentiTest {
         System.out.println("eliminaUtente");
         Utente u = new Utente("Aniello", "De Marinis", "0612708860", "a.demarinis@studenti.unisa.it");
         gestioneUtenti.aggiungiUtente(u);
-        gestioneUtenti.eliminaUtente(u);
+        List<Prestito> prestitiVuoti = new ArrayList<>();
+        gestioneUtenti.eliminaUtente(u, prestitiVuoti);
         assertTrue(gestioneUtenti.getUtenti().isEmpty());
         
     }
-
+    
     /**
      * Test of cercaUtente method, of class GestioneUtenti.
      */

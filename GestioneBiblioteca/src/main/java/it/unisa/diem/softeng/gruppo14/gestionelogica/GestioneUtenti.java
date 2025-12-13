@@ -1,5 +1,7 @@
 package it.unisa.diem.softeng.gruppo14.gestionelogica;
 
+import it.unisa.diem.softeng.gruppo14.gestionedati.ComparatoreUtenti;
+import it.unisa.diem.softeng.gruppo14.gestionedati.Prestito;
 import it.unisa.diem.softeng.gruppo14.gestionedati.Utente;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,8 +60,13 @@ public class GestioneUtenti {
         
         if(u != null){
             
+            for(Utente esistente : this.utenti){
+                if(esistente.getMatricola().equals(u.getMatricola())){
+                    throw new IllegalArgumentException("Matricola già presente nel sistema");
+                }
+            }
             utenti.add(u);
-            
+            utenti.sort(new ComparatoreUtenti());
         }
         
     }
@@ -79,7 +86,15 @@ public class GestioneUtenti {
      */
     public void modificaUtente(Utente u1, Utente u2){
         
-        
+        if(this.utenti.contains(u1) && u2 != null){
+            
+            u1.setCognome(u2.getCognome());
+            u1.setNome(u2.getNome());
+            u1.setMatricola(u2.getMatricola());
+            u1.setEmail(u2.getEmail());
+            
+            utenti.sort(new ComparatoreUtenti());
+        }
         
     }
     
@@ -87,12 +102,26 @@ public class GestioneUtenti {
      * @brief Rimuove un utente dall'archivio
      * 
      * @param[in] u L'utente da rimuovere.
+     * param[in] prestiti Lista dei prestiti attiivi.
      * 
      * @post L'utente `u` non è più presente nella lista utenti.
      */
-    public void eliminaUtente(Utente u){
+    public void eliminaUtente(Utente u, List<Prestito> prestiti){
         
-        
+        if(u != null){
+            for(Prestito p : prestiti){
+                
+                if(p.getUtente().getMatricola().equals(u.getMatricola())){
+                    
+                    throw new IllegalArgumentException("Impossibile eliminare: l'Utente ha ancora dei prestiti in corso!");
+                    
+                }
+                    
+            }
+            
+            this.utenti.remove(u);
+            utenti.sort(new ComparatoreUtenti());
+        }
         
     }
     
@@ -100,15 +129,35 @@ public class GestioneUtenti {
      * @brief Cerca utenti nell'archivio.
      * 
      * Effettua una ricerca case-insensitive su `nome`, 
-     * `cognome` e `matricola` degli utenti. Se il parametro testo è vuoto
-     * o `null`, restituisce l'intera lista degli utenti. 
+     * `cognome` e `matricola` degli utenti. Se il parametro testo è vuoto,
+     * restituisce l'intera lista degli utenti. 
      * 
      * @param[in] testo La stringa da cercare.
      * @return Una lista di Utente contenente i risultati della ricerca.
      */
     public List<Utente> cercaUtente(String testo){
         
-        return new ArrayList<Utente>();
+        if(testo.trim().isEmpty()){
+            
+            return this.utenti;
+            
+        }
+        
+        String testoMinuscolo = testo.toLowerCase();
+        List<Utente> risultati = new ArrayList<>();
+        
+        for(Utente u : utenti){
+            
+            if (u.getNome().toLowerCase().contains(testoMinuscolo) ||
+                u.getCognome().toLowerCase().contains(testoMinuscolo) ||
+                u.getMatricola().toLowerCase().contains(testoMinuscolo) ||
+                u.getEmail().toLowerCase().contains(testoMinuscolo)) {
+                
+                risultati.add(u);
+            }
+        }
+        
+        return risultati;
         
     }
     

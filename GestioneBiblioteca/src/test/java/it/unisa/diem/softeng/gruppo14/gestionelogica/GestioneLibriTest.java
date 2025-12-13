@@ -1,6 +1,7 @@
 package it.unisa.diem.softeng.gruppo14.gestionelogica;
 
 import it.unisa.diem.softeng.gruppo14.gestionedati.Libro;
+import it.unisa.diem.softeng.gruppo14.gestionedati.Prestito;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -123,10 +124,11 @@ public class GestioneLibriTest {
     @Test
     public void testEliminaLibro() {
         
-        System.out.println("eliminaLibro");
+        System.out.println("eliminaLibro - Caso Senza Prestiti");
         Libro l = new Libro("Il Trono di Spade", Arrays.asList("G.R.R. Martin"), 1996, "978-88-11111", 3);
         gestioneLibri.aggiungiLibro(l);
-        gestioneLibri.eliminaLibro(l);
+        List<Prestito> prestitiVuoti = new ArrayList<>();
+        gestioneLibri.eliminaLibro(l, prestitiVuoti);
         assertTrue(gestioneLibri.getLibri().isEmpty());
         
     }

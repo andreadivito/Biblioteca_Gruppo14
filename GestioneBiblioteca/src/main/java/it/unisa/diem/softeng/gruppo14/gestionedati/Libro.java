@@ -1,5 +1,6 @@
 package it.unisa.diem.softeng.gruppo14.gestionedati;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -46,10 +47,15 @@ public class Libro {
      */
     public Libro(String titolo, List<String> autori, int annoPubblicazione, String ISBN, int numCopie){
         
+        if(titolo == null || titolo.trim().isEmpty()) throw new IllegalArgumentException("Titolo non valido."); // trim() -> metodo per eliminare spazi (ad inizio e fine stringa)
         this.titolo = titolo;
+        if(autori == null || autori.isEmpty()) throw new IllegalArgumentException("Autore non valido.");
         this.autori = autori;
+        if(annoPubblicazione > LocalDate.now().getYear()) throw new IllegalArgumentException("Anno di pubblicazione non valido");
         this.annoPubblicazione = annoPubblicazione;
+        if(ISBN == null || !ISBN.matches("^978-88-\\d{5}$"))  throw new IllegalArgumentException("ISBN non valido.");
         this.ISBN = ISBN;
+        if(numCopie <= 0) throw new IllegalArgumentException("Numero di copie non valido");
         this.numCopie = numCopie;
         
     }
@@ -107,6 +113,7 @@ public class Libro {
      * @post Il titolo del libro viene aggiornato.
      */
     public void setTitolo(String titolo) {
+        if(titolo == null || titolo.trim().isEmpty()) throw new IllegalArgumentException("Titolo non valido.");
         this.titolo = titolo;
     }
 
@@ -118,6 +125,7 @@ public class Libro {
      * @post La lista degli autori viene aggiornata.
      */
     public void setAutori(List<String> autori) {
+        if(autori == null || autori.isEmpty()) throw new IllegalArgumentException("Autore non valido.");
         this.autori = autori;
     }
 
@@ -129,6 +137,7 @@ public class Libro {
      * @post L'anno di pubblicazione viene aggiornato.
      */
     public void setAnnoPubblicazione(int annoPubblicazione) {
+        if(annoPubblicazione > LocalDate.now().getYear()) throw new IllegalArgumentException("Anno di pubblicazione non valido");
         this.annoPubblicazione = annoPubblicazione;
     }
 
@@ -138,6 +147,7 @@ public class Libro {
      * @post Il codice ISBN viene aggiornato.
      */
     public void setISBN(String ISBN) {
+        if(ISBN == null || !ISBN.matches("^978-88-\\d{5}$"))  throw new IllegalArgumentException("ISBN non valido.");
         this.ISBN = ISBN;
     }
 
@@ -149,6 +159,7 @@ public class Libro {
      * @post Il numero di copie viene aggiornato se il valore è valido.
      */
     public void setNumCopie(int numCopie) {
+        if(numCopie <= 0) throw new IllegalArgumentException("Numero di copie non valido");
         this.numCopie = numCopie;
     }
     

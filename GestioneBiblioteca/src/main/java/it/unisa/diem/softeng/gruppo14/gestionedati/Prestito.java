@@ -40,8 +40,11 @@
              */
             public Prestito(Libro libro, Utente utente, LocalDate dataRestituzione){
 
+                if(libro == null) throw new IllegalArgumentException("Libro non valido");
                 this.libro = libro;
+                if(utente == null) throw new IllegalArgumentException("Utente non valido");
                 this.utente = utente;
+                if(dataRestituzione == null) throw new IllegalArgumentException("Data di restituzione non valida");
                 this.dataRestituzione = dataRestituzione;
                 
             }
@@ -82,6 +85,7 @@
              * @post Il libro associato viene aggiornato.
              */
             public void setLibro(Libro libro) {
+                if(libro == null) throw new IllegalArgumentException("Libro non valido");
                 this.libro = libro;
             }
 
@@ -93,6 +97,7 @@
              * @post L'utente associato viene aggiornato.
              */
             public void setUtente(Utente utente) {
+                if(utente == null) throw new IllegalArgumentException("Utente non valido");
                 this.utente = utente;
             }
 
@@ -104,6 +109,7 @@
              * @post La data di restituzione viene aggiornata.
              */
             public void setDataRestituzione(LocalDate dataRestituzione) {
+                if(dataRestituzione == null) throw new IllegalArgumentException("Data di restituzione non valida");
                 this.dataRestituzione = dataRestituzione;
             }
 

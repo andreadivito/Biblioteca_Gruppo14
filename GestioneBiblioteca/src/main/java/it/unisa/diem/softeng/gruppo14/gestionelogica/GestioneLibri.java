@@ -1,6 +1,8 @@
 package it.unisa.diem.softeng.gruppo14.gestionelogica;
 
+import it.unisa.diem.softeng.gruppo14.gestionedati.ComparatoreLibri;
 import it.unisa.diem.softeng.gruppo14.gestionedati.Libro;
+import it.unisa.diem.softeng.gruppo14.gestionedati.Prestito;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,8 +55,18 @@ public class GestioneLibri {
      */
     public void aggiungiLibro(Libro l){
         
-        
-        
+        if (l != null) {
+            
+            // Controllo Duplicati per ISBN
+            for (Libro esistente : this.libri) {
+                if (esistente.getISBN().equals(l.getISBN())) {
+                    throw new IllegalArgumentException("Esiste già un libro con questo ISBN: " + l.getISBN());
+                }
+            }
+            
+            this.libri.add(l);
+            libri.sort(new ComparatoreLibri());
+        }
     }
     
     /**
@@ -72,7 +84,18 @@ public class GestioneLibri {
      */
     public void modificaLibro(Libro l1, Libro l2){
         
-        
+        if (this.libri.contains(l1) && l2 != null) {
+            
+            // Aggiorno tutti i campi
+            l1.setTitolo(l2.getTitolo());
+            l1.setAutori(l2.getAutori());
+            l1.setAnnoPubblicazione(l2.getAnnoPubblicazione());
+            l1.setISBN(l2.getISBN());
+            l1.setNumCopie(l2.getNumCopie());
+            
+            libri.sort(new ComparatoreLibri());
+            
+        }
         
     }
     
@@ -83,9 +106,21 @@ public class GestioneLibri {
      * 
      * @post Il libro `l` non è piu presente nella lista libri.
      */
-    public void eliminaLibro(Libro l){
+    public void eliminaLibro(Libro l, List<Prestito> prestiti){
         
-        
+        if (l != null) {
+            
+            // Controllo Integrità: Non eliminare se in prestito
+            for (Prestito p : prestiti) {
+                // Controllo tramite ISBN per sicurezza
+                if (p.getLibro().getISBN().equals(l.getISBN())) {
+                    throw new IllegalArgumentException("Impossibile eliminare: il libro risulta in prestito!");
+                }
+            }
+            
+            this.libri.remove(l);
+            libri.sort(new ComparatoreLibri());
+        }
         
     }
     
@@ -93,8 +128,8 @@ public class GestioneLibri {
      * @brief Cerca i libri nell'archivio.
      * 
      * Effettua una ricerca case-insensitive su titolo, 
-     * ISBN e nomi degli autori. Se il parametro testo è vuoto
-     * o null, restituisce l'intera lista dei libri. 
+     * ISBN e nomi degli autori. Se il parametro testo è vuoto,
+     * restituisce l'intera lista dei libri. 
      * 
      * @param[in] testo La stringa da cercare.
      * 
@@ -102,8 +137,38 @@ public class GestioneLibri {
      */
     public List<Libro> cercaLibro(String testo){
         
-        return new ArrayList<Libro>();
+       if (testo.trim().isEmpty()) {
+            return new ArrayList<>(this.libri);
+        }
         
+        String testoMinuscolo = testo.toLowerCase();
+        List<Libro> risultati = new ArrayList<>();
+        
+        for (Libro l : this.libri) {
+            boolean trovato = false;
+            
+            // Ricerca su Titolo e ISBN
+            if (l.getTitolo().toLowerCase().contains(testoMinuscolo) || 
+                l.getISBN().contains(testoMinuscolo)) { 
+                trovato = true;
+            }
+            
+            // Ricerca nella lista degli Autori
+            if (!trovato) {
+                for (String autore : l.getAutori()) {
+                    if (autore.toLowerCase().contains(testoMinuscolo)) {
+                        trovato = true;
+                        break; // Trovato un autore, inutile controllare gli altri autori
+                    }
+                }
+            }
+            
+            if (trovato) {
+                risultati.add(l);
+            }
+        }
+        
+        return risultati;
     }
     
 }

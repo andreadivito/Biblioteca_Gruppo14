@@ -183,10 +183,11 @@ public class LibroTest {
     public void testDecrementaCopieSottoZero() {            //Boundary test
         
         System.out.println("decrementaCopieSottoZero");
-        libro.setNumCopie(0);
+        libro.setNumCopie(1);
         libro.decrementaCopie();
-        int expResult = 0;
-        assertEquals(expResult, libro.getNumCopie(), "Errore: le copie sono scese sotto lo zero!");
+        assertEquals(0, libro.getNumCopie(), "Dovrei avere 0 copie ora");
+        libro.decrementaCopie();
+        assertEquals(0, libro.getNumCopie(), "Errore: le copie sono scese sotto lo zero");
         
     }
     

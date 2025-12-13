@@ -40,9 +40,13 @@ public class Utente {
      */
     public Utente(String nome, String cognome, String matricola, String email){
         
+        if(nome == null || nome.trim().isEmpty()) throw new IllegalArgumentException("Nome non valido");
         this.nome = nome;
+        if(cognome == null || cognome.trim().isEmpty()) throw new IllegalArgumentException("Cognome non valido");
         this.cognome = cognome;
+        if(matricola == null || matricola.matches("//d{10}")) throw new IllegalArgumentException("Matricola non valida");
         this.matricola = matricola;
+        if(email == null || email.trim().isEmpty() || (!email.endsWith("@studenti.unisa.it") && !email.endsWith("@unisa.it")) ) throw new IllegalArgumentException("E-mail non valida");
         this.email = email;
         
     }
@@ -91,6 +95,7 @@ public class Utente {
      * @post Il campo `nome` viene aggiornato.
      */
     public void setNome(String nome) {
+        if(nome == null || nome.trim().isEmpty()) throw new IllegalArgumentException("Nome non valido");
         this.nome = nome;
     }
     
@@ -102,6 +107,7 @@ public class Utente {
      * @post Il campo `cognome` viene aggiornato.
      */
     public void setCognome(String cognome) {
+        if(cognome == null || cognome.trim().isEmpty()) throw new IllegalArgumentException("Cognome non valido");
         this.cognome = cognome;
     }
     
@@ -113,6 +119,7 @@ public class Utente {
      * @post Il campo `matricola` viene aggiornato.
      */
     public void setMatricola(String matricola) {
+        if(matricola == null || matricola.matches("//d{10}")) throw new IllegalArgumentException("Matricola non valida");
         this.matricola = matricola;
     }
     
@@ -124,6 +131,7 @@ public class Utente {
      * @post Il campo `email` viene aggiornato.
      */
     public void setEmail(String email) {
+        if(email == null || email.trim().isEmpty() || (!email.endsWith("@studenti.unisa.it") && !email.endsWith("@unisa.it"))) throw new IllegalArgumentException("E-mail non valida");
         this.email = email;
     }
     
