@@ -36,6 +36,7 @@ public class Main extends Application {
      * @param[in] primaryStage Lo stage principale dell'applicazione.
      * @throws IOException Nel caso in cui il file FXML specificato non può essere caricato.
      */
+    
     @Override
     public void start(Stage primaryStage) throws IOException {
         

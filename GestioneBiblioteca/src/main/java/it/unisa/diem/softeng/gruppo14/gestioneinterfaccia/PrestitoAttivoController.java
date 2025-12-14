@@ -1,19 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.unisa.diem.softeng.gruppo14.gestioneinterfaccia;
 
+import it.unisa.diem.softeng.gruppo14.gestionedati.Prestito;
+import it.unisa.diem.softeng.gruppo14.gestionedati.Utente;
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.AnchorPane;
 
 /**
  * @brief Classe che gestisce l'interfaccia dei prestiti attivi.
@@ -25,18 +22,12 @@ import javafx.scene.layout.AnchorPane;
  */
 public class PrestitoAttivoController implements Initializable {
 
-    @FXML
-    private TableView<?> LoanTable;
-    @FXML
-    private TableColumn<?, ?> loanBookTitleClm;
-    @FXML
-    private TableColumn<?, ?> loanUserClm;
-    @FXML
-    private TableColumn<?, ?> dateLimitClm;
-    @FXML
-    private AnchorPane gestionePrestitiPane;
-    @FXML
-    private Button rimuoviPBtn;
+    @FXML private TableView<Prestito> LoanTable;
+    @FXML private TableColumn<Prestito, String> loanBookTitleClm;
+    @FXML private TableColumn<Prestito, String> loanUserClm;
+    @FXML private TableColumn<Prestito, String> dateLimitClm;
+
+    private static final DateTimeFormatter DTF = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     /**
      * @brief Inizializza il controller.
@@ -50,14 +41,41 @@ public class PrestitoAttivoController implements Initializable {
      * 
      * @post Gli attributi non statici sono stati inizializzati.
      */
-     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        loanBookTitleClm.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getLibro().getTitolo()));
+        loanUserClm.setCellValueFactory(c -> new SimpleStringProperty(formatUser(c.getValue().getUtente())));
+        dateLimitClm.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getDataRestituzione().format(DTF)));
+
+        SchermataPrincipaleController.Shared.refreshAll();
+        LoanTable.setItems(SchermataPrincipaleController.Shared.prestitiObs);
+    }
 
     @FXML
     private void rimuoviPrestitoBtn(ActionEvent event) {
+        Prestito selezionato = LoanTable.getSelectionModel().getSelectedItem();
+        if (selezionato == null) {
+            SchermataPrincipaleController.showError("Rimozione prestito", "Seleziona un prestito dalla tabella.");
+            return;
+        }
+
+        try {
+            SchermataPrincipaleController.Shared.gestionePrestiti.registraRestituzione(selezionato);
+            SchermataPrincipaleController.Shared.refreshAll();
+            LoanTable.refresh();
+
+            SchermataPrincipaleController.showInfo("Prestito rimosso", "Prestito restituito/rimosso correttamente.");
+        } catch (RuntimeException ex) {
+            SchermataPrincipaleController.showError("Rimozione prestito non riuscita", ex.getMessage());
+        }
     }
-    
+
+    private static String formatUser(Utente u) {
+        if (u == null) return "";
+        return safe(u.getCognome()) + " " + safe(u.getNome()) + " (" + safe(u.getMatricola()) + ")";
+    }
+
+    private static String safe(String s) {
+        return s == null ? "" : s.trim();
+    }
 }
