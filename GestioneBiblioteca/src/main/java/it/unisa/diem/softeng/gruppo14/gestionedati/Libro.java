@@ -1,5 +1,6 @@
 package it.unisa.diem.softeng.gruppo14.gestionedati;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -15,7 +16,7 @@ import java.util.List;
  * 
  * @author gruppo14
  */
-public class Libro {
+public class Libro implements Serializable{
     
     /// @brief Titolo del libro.
     private String titolo;

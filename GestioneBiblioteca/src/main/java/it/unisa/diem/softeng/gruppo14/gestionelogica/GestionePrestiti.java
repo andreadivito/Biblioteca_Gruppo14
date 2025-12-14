@@ -1,8 +1,10 @@
 package it.unisa.diem.softeng.gruppo14.gestionelogica;
 
+import it.unisa.diem.softeng.gruppo14.gestionedati.ComparatorePrestiti;
 import it.unisa.diem.softeng.gruppo14.gestionedati.Libro;
 import it.unisa.diem.softeng.gruppo14.gestionedati.Prestito;
 import it.unisa.diem.softeng.gruppo14.gestionedati.Utente;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +15,7 @@ import java.util.List;
  * La classe permette di memorizzare e manipolare la lista dei prestiti
  * (aggiunta, rimozione).
  * 
- * @invariant `prestiti != null`.
+ * @invariant prestiti != null.
  * 
  * @author gruppo14
  */
@@ -38,7 +40,7 @@ public class GestionePrestiti {
     /**
      * @brief Restituisce la lista dei prestiti attivi.
      * 
-     * @return Lista di oggetti `Prestito`.
+     * @return Lista di oggetti Prestito.
      */
     public List<Prestito> getPrestiti() {
         return prestiti;
@@ -56,7 +58,7 @@ public class GestionePrestiti {
      * @param[in] dataRestituzione La data prevista per la restituzione.
      * 
      * @pre 
-     * `l != null && u != null && l.getNumCopie() > 0`.
+     * l != null && u != null && l.getNumCopie() > 0.
      * L'utente deve avere meno di 3 prestiti attivi.
      * 
      * @post 
@@ -65,8 +67,28 @@ public class GestionePrestiti {
      */
     public void registraPrestito(Libro l, Utente u, LocalDate dataRestituzione){
         
+        if (l.getNumCopie() > 0) {
+        int conta = 0;
         
+        for (Prestito p : this.prestiti) {
+            if (p.getUtente() != null) {
+                if (p.getUtente().getMatricola().equals(u.getMatricola())) {
+                    conta++;
+                }
+            }
+        }
         
+        if (conta >= 3) {
+            throw new IllegalArgumentException("Impossibile registrare il prestito: l'Utente ha più di 3 prestiti in corso!");
+        }
+        
+        l.decrementaCopie();
+        
+        Prestito nuovoPrestito = new Prestito(l, u, dataRestituzione);
+        this.prestiti.add(nuovoPrestito);
+        
+        this.prestiti.sort(new ComparatorePrestiti());
+        }
     }
     
     /**
@@ -83,8 +105,13 @@ public class GestionePrestiti {
      */
     public void registraRestituzione(Prestito p){
         
-        
-        
+        if (this.prestiti.contains(p)) {
+            
+            Libro l = p.getLibro();
+            this.prestiti.remove(p);
+            l.incrementaCopie();
+            
+        }
     }
-    
+
 }

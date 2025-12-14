@@ -1,5 +1,6 @@
 package it.unisa.diem.softeng.gruppo14.gestionedati;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
  * 
  * @author gruppo14
  */
-public class Utente {
+public class Utente implements Serializable{
     
     /// brief Il nome dell'utente.
     private String nome;

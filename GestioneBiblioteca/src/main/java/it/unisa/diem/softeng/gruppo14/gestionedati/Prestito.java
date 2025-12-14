@@ -1,5 +1,6 @@
         package it.unisa.diem.softeng.gruppo14.gestionedati;
 
+import java.io.Serializable;
         import java.time.LocalDate;
 
         /**
@@ -13,7 +14,7 @@
          * 
          * @author gruppo14
          */
-        public class Prestito {
+        public class Prestito implements Serializable {
 
             /// @brief Il libro oggetto del prestito.
             private Libro libro;
