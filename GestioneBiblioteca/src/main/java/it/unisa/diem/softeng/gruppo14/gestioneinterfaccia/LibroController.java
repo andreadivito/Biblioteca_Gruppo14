@@ -17,6 +17,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
+/**
+ * @brief Classe che gestisce l'interfaccia dei libri presenti nell'archivio.
+ * 
+ * La classe gestisce le azioni relative alla visualizzazione e manipolazione
+ * dei dati dei libri, come l'aggiunta, la modifica e la rimozione 
+ * dei libri nella tabella.
+ *
+ * @author gruppo14
+ */
 public class LibroController implements Initializable {
 
     @FXML private TableView<Libro> bookTable1;
@@ -36,6 +45,18 @@ public class LibroController implements Initializable {
 
     private FilteredList<Libro> filtered;
 
+    /**
+     * @brief Inizializza il controller.
+     * 
+     * Il metodo inizializza gli elementi dell'interfaccia utente e 
+     * prepara la logica per le azioni relative 
+     * alla gestione della lista dei libri.
+     * 
+     * @param[in] url Percorso del file FXML associato al controller.
+     * @param[in] rb Collezione di risorse localizzate per l'applicazione.
+     * 
+     * @post Gli attributi non statici sono stati inizializzati.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         titleClm1.setCellValueFactory(c -> new SimpleStringProperty(safe(c.getValue().getTitolo())));
