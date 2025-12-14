@@ -50,10 +50,10 @@
             </HBox>
             <TableView fx:id="userTable1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="430.0" prefWidth="618.0" style="-fx-background-radius: 30; -fx-background-color: #d9d9d9; -fx-padding: -2;">
                <columns>
-                  <TableColumn fx:id="surnameClm1" prefWidth="150.0" style="-fx-background-color: #999999;" text="Cognome" />
-                  <TableColumn fx:id="nameClm1" prefWidth="150.0" style="-fx-background-color: #999999;" text="Nome" />
-                  <TableColumn fx:id="codeClm1" prefWidth="141.0" style="-fx-background-color: #999999;" text="Matricola" />
-                  <TableColumn fx:id="mailClm1" prefWidth="205.0" style="-fx-background-color: #999999;" text="Email" />
+                  <TableColumn fx:id="surnameClm1" prefWidth="150.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Cognome" />
+                  <TableColumn fx:id="nameClm1" prefWidth="150.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Nome" />
+                  <TableColumn fx:id="codeClm1" prefWidth="141.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Matricola" />
+                  <TableColumn fx:id="mailClm1" prefWidth="205.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Email" />
                </columns>
             </TableView>
          </children>

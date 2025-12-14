@@ -36,10 +36,10 @@
             </Label>
             <TableView fx:id="userTable" prefHeight="222.0" prefWidth="573.0" style="-fx-background-radius: 30; -fx-background-color: #d9d9d9; -fx-padding: -2;">
                <columns>
-                  <TableColumn fx:id="surnameClm" prefWidth="129.22454833984375" style="-fx-background-color: #999999;" text="Cognome" />
-                  <TableColumn fx:id="nameClm" prefWidth="115.77540588378906" style="-fx-background-color: #999999;" text="Nome" />
-                  <TableColumn fx:id="codeClm" prefWidth="172.9132080078125" style="-fx-background-color: #999999;" text="Matricola" />
-                  <TableColumn fx:id="mailClm" prefWidth="205.0" style="-fx-background-color: #999999;" text="Email" />
+                  <TableColumn fx:id="surnameClm" prefWidth="129.22454833984375" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Cognome" />
+                  <TableColumn fx:id="nameClm" prefWidth="115.77540588378906" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Nome" />
+                  <TableColumn fx:id="codeClm" prefWidth="172.9132080078125" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Matricola" />
+                  <TableColumn fx:id="mailClm" prefWidth="205.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Email" />
                </columns>
             </TableView>
 
@@ -57,9 +57,9 @@
             </Label>
             <TableView fx:id="bookTable" prefHeight="225.0" prefWidth="573.0" style="-fx-background-radius: 30; -fx-background-color: #d9d9d9; -fx-padding: -2;">
                <columns>
-                  <TableColumn fx:id="titleClm" prefWidth="172.1497344970703" style="-fx-background-color: #999999;" text="Titolo" />
-                  <TableColumn fx:id="authorClm" prefWidth="207.85025024414062" style="-fx-background-color: #999999;" text="Autore" />
-                  <TableColumn fx:id="numCopiesClm" prefWidth="241.8681640625" style="-fx-background-color: #999999;" text="Copie Disponibili" />
+                  <TableColumn fx:id="titleClm" prefWidth="172.1497344970703" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Titolo" />
+                  <TableColumn fx:id="authorClm" prefWidth="207.85025024414062" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Autore" />
+                  <TableColumn fx:id="numCopiesClm" prefWidth="241.8681640625" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Copie" />
                   <TableColumn fx:id="pubYearClm" visible="false" />
                   <TableColumn fx:id="isbnClm" visible="false" />
                </columns>

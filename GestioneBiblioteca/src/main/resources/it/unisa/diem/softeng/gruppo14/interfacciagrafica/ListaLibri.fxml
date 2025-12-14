@@ -50,11 +50,11 @@
             </HBox>
             <TableView fx:id="bookTable1" maxWidth="-Infinity" prefHeight="430.0" prefWidth="618.0" style="-fx-background-radius: 30; -fx-background-color: #d9d9d9; -fx-padding: -2;">
                <columns>
-                  <TableColumn fx:id="titleClm1" prefWidth="154.0" style="-fx-background-color: #999999;" text="Titolo" />
-                  <TableColumn fx:id="authorClm1" prefWidth="146.0" style="-fx-background-color: #999999;" text="Autore" />
-                  <TableColumn fx:id="pubYearClm1" prefWidth="107.0" style="-fx-background-color: #999999;" text="Anno" />
-                  <TableColumn fx:id="isbnClm1" prefWidth="105.47308349609375" style="-fx-background-color: #999999;" text="ISBN" />
-                  <TableColumn fx:id="numCopiesClm1" prefWidth="120.0" style="-fx-background-color: #999999;" text="Copie Disponibili" />
+                  <TableColumn fx:id="titleClm1" prefWidth="154.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Titolo" />
+                  <TableColumn fx:id="authorClm1" prefWidth="146.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Autore" />
+                  <TableColumn fx:id="pubYearClm1" prefWidth="107.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Anno" />
+                  <TableColumn fx:id="isbnClm1" prefWidth="105.47308349609375" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="ISBN" />
+                  <TableColumn fx:id="numCopiesClm1" prefWidth="120.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Copie" />
                </columns>
             </TableView>
          </children>
