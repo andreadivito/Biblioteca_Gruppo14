@@ -1,6 +1,7 @@
 package it.unisa.diem.softeng.gruppo14.gestioneinterfaccia;
 
 import it.unisa.diem.softeng.gruppo14.gestionedati.Libro;
+import it.unisa.diem.softeng.gruppo14.gestionedati.Prestito;
 import it.unisa.diem.softeng.gruppo14.gestionedati.Utente;
 import java.net.URL;
 import java.time.LocalDate;
@@ -99,7 +100,7 @@ private void aggiungiPrestitoBtn(ActionEvent event) {
 
     int prestitiSuLibro = 0;
     String isbn = safe(l.getISBN());
-    for (it.unisa.diem.softeng.gruppo14.gestionedati.Prestito p : SchermataPrincipaleController.Shared.gestionePrestiti.getPrestiti()) {
+    for (Prestito p : SchermataPrincipaleController.Shared.gestionePrestiti.getPrestiti()) {
         if (p != null && p.getLibro() != null && safe(p.getLibro().getISBN()).equals(isbn)) {
             prestitiSuLibro++;
         }
@@ -111,7 +112,7 @@ private void aggiungiPrestitoBtn(ActionEvent event) {
     }
 
     String matricola = safe(u.getMatricola());
-    for (it.unisa.diem.softeng.gruppo14.gestionedati.Prestito p : SchermataPrincipaleController.Shared.gestionePrestiti.getPrestiti()) {
+    for (Prestito p : SchermataPrincipaleController.Shared.gestionePrestiti.getPrestiti()) {
         if (p != null && p.getLibro() != null && p.getUtente() != null
                 && safe(p.getLibro().getISBN()).equals(isbn)
                 && safe(p.getUtente().getMatricola()).equals(matricola)) {
