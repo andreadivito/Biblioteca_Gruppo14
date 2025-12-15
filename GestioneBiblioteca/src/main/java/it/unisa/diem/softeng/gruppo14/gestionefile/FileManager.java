@@ -110,18 +110,13 @@ public class FileManager {
             List<Prestito> listaPrestiti = (List<Prestito>) mappaDati.get("prestiti");
             
             if (listaLibri != null) {
-                gestioneLibri.getLibri().clear(); 
-                gestioneLibri.getLibri().addAll(listaLibri);
+                gestioneLibri.impostaLibri(listaLibri);
             }
-
             if (listaUtenti != null) {
-                gestioneUtenti.getUtenti().clear();
-                gestioneUtenti.getUtenti().addAll(listaUtenti);
+                gestioneUtenti.impostaUtenti(listaUtenti);
             }
-
             if (listaPrestiti != null) {
-                gestionePrestiti.getPrestiti().clear();
-                gestionePrestiti.getPrestiti().addAll(listaPrestiti);
+                gestionePrestiti.impostaPrestiti(listaPrestiti);
             }
         }catch (ClassNotFoundException | IOException ex){
             ex.printStackTrace();

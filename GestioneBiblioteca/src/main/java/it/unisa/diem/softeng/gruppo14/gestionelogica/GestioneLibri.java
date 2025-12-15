@@ -171,4 +171,21 @@ public class GestioneLibri {
         return risultati;
     }
     
+    /**
+     * @brief Sostituisce l'intera lista dei libri con una nuova lista.
+     * 
+     * Questo metodo svuota la lista corrente dei libri e inserisce tutti gli elementi
+     * presenti nella lista passata come parametro. Viene utilizzato principalmente
+     * per ripristinare lo stato dell'applicazione dopo il caricamento da file.
+     * 
+     * @param[in] nuovaLista La lista di oggetti {@link Libro} da importare nel gestore.
+     * 
+     * @pre nuovaLista != null (la lista passata non deve essere nulla).
+     * @post La lista interna libri contiene esattamente gli stessi elementi di nuovaLista.
+     */
+    public void impostaLibri(List<Libro> nuovaLista) {
+    this.libri.clear();
+    this.libri.addAll(nuovaLista);
+    }
+    
 }

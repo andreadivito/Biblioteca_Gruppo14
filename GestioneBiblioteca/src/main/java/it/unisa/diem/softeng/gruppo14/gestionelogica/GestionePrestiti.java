@@ -114,4 +114,20 @@ public class GestionePrestiti {
         }
     }
 
+    /**
+     * @brief Aggiorna l'archivio dei prestiti sostituendolo con una nuova lista.
+     * 
+     * Cancella tutti i prestiti attualmente in memoria e li sostituisce con quelli
+     * presenti nella lista fornita. È fondamentale per la sincronizzazione dei dati
+     * durante la fase di lettura da file.
+     * 
+     * @param[in] nuovaLista La lista di oggetti {@link Prestito} da caricare.
+     * @pre nuovaLista != null.
+     * @post La lista interna prestiti è identica a nuovaLista.
+     */
+    public void impostaPrestiti(List<Prestito> nuovaLista) {
+    this.prestiti.clear();
+    this.prestiti.addAll(nuovaLista);
+}
+    
 }

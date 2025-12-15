@@ -161,4 +161,21 @@ public class GestioneUtenti {
         
     }
     
+    /**
+     * @brief Sostituisce l'intera lista degli utenti con una nuova lista.
+     * 
+     * Questo metodo permette di sovrascrivere lo stato corrente del gestore utenti
+     * con i dati forniti. Garantisce l'incapsulamento evitando che classi esterne
+     * (come il FileManager) debbano manipolare direttamente la lista interna.
+     * 
+     * @param[in] nuovaLista La lista di oggetti {@link Utente} da impostare.
+     * @pre nuovaLista != null.
+     * 
+     * @post La lista interna utenti è aggiornata con i dati forniti.
+     */
+    public void impostaUtenti(List<Utente> nuovaLista) {
+    this.utenti.clear();
+    this.utenti.addAll(nuovaLista);
+    }
+    
 }
