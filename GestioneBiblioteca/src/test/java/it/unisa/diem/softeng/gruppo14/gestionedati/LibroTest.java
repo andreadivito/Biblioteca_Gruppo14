@@ -1,5 +1,6 @@
 package it.unisa.diem.softeng.gruppo14.gestionedati;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
@@ -27,6 +28,69 @@ public class LibroTest {
         autori = new ArrayList<>();
         autori.add("J.R.R. Tolkien");
         libro = new Libro("Il Signore degli Anelli", autori, 1954, "978-88-12345", 5);
+        
+    }
+    
+    @Test
+    public void testCostruttoreTitoloInvalido() {
+        System.out.println("Costruttore - Titolo Invalido");
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Libro(null, autori, 2000, "978-88-12345", 1);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Libro("", autori, 2000, "978-88-12345", 1);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Libro("   ", autori, 2000, "978-88-12345", 1);
+        });
+    }
+    
+    @Test
+    public void testCostruttoreAutoriInvalidi() {
+        System.out.println("Costruttore - Autori Invalidi");
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Libro("Titolo", null, 2000, "978-88-12345", 1);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Libro("Titolo", new ArrayList<>(), 2000, "978-88-12345", 1);
+        });
+    }
+    
+    @Test
+    public void testCostruttoreAnnoInvalido() {
+        System.out.println("Costruttore - Anno Futuro");
+        int annoFuturo = LocalDate.now().getYear() + 1;
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Libro("Titolo", autori, annoFuturo, "978-88-12345", 1);
+        });
+    }
+    
+    @Test
+    public void testCostruttoreISBNInvalido() {
+        
+        System.out.println("Costruttore - ISBN Invalido");
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Libro("Titolo", autori, 2000, null, 1);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Libro("Titolo", autori, 2000, "123-456", 1);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Libro("Titolo", autori, 2000, "978-88-ABCDE", 1);
+        });
+        
+    }
+    
+    @Test
+    public void testCostruttoreNumCopieInvalido() {
+        
+        System.out.println("Costruttore - Copie Invalidi");
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Libro("Titolo", autori, 2000, "978-88-12345", 0);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Libro("Titolo", autori, 2000, "978-88-12345", -5);
+        });
         
     }
     
@@ -109,6 +173,16 @@ public class LibroTest {
         
     }
 
+    @Test
+    public void testSetTitoloInvalido() {
+        
+        System.out.println("setTitolo - Invalido");
+        assertThrows(IllegalArgumentException.class, () -> libro.setTitolo(null));
+        assertThrows(IllegalArgumentException.class, () -> libro.setTitolo(""));
+        assertThrows(IllegalArgumentException.class, () -> libro.setTitolo("   "));
+        
+    }
+    
     /**
      * Test of setAutori method, of class Libro.
      */
@@ -124,6 +198,15 @@ public class LibroTest {
         
     }
 
+    @Test
+    public void testSetAutoriInvalidi() {
+        
+        System.out.println("setAutori - Invalido");
+        assertThrows(IllegalArgumentException.class, () -> libro.setAutori(null));
+        assertThrows(IllegalArgumentException.class, () -> libro.setAutori(new ArrayList<>()));
+        
+    }
+    
     /**
      * Test of setAnnoPubblicazione method, of class Libro.
      */
@@ -138,6 +221,15 @@ public class LibroTest {
         
     }
 
+    @Test
+    public void testSetAnnoPubblicazioneInvalido() {
+        
+        System.out.println("setAnnoPubblicazione - Futuro");
+        int annoFuturo = LocalDate.now().getYear() + 1;
+        assertThrows(IllegalArgumentException.class, () -> libro.setAnnoPubblicazione(annoFuturo));
+        
+    }
+    
     /**
      * Test of setISBN method, of class Libro.
      */
@@ -152,6 +244,15 @@ public class LibroTest {
         
     }
 
+    @Test
+    public void testSetISBNInvalido() {
+        
+        System.out.println("setISBN - Invalido");
+        assertThrows(IllegalArgumentException.class, () -> libro.setISBN(null));
+        assertThrows(IllegalArgumentException.class, () -> libro.setISBN("ISBN-Sbagliato"));
+        
+    }
+    
     /**
      * Test of setNumCopie method, of class Libro.
      */
@@ -166,6 +267,15 @@ public class LibroTest {
         
     }
 
+    @Test
+    public void testSetNumCopieInvalido() {
+        
+        System.out.println("setNumCopie - Invalido");
+        assertThrows(IllegalArgumentException.class, () -> libro.setNumCopie(0));
+        assertThrows(IllegalArgumentException.class, () -> libro.setNumCopie(-1));
+        
+    }
+    
     /**
      * Test of decrementaCopie method, of class Libro.
      */
