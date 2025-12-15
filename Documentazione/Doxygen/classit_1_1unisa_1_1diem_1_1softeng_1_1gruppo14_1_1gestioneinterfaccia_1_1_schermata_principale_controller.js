@@ -1,4 +1,0 @@
-var classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestioneinterfaccia_1_1_schermata_principale_controller =
-[
-    [ "initialize", "classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestioneinterfaccia_1_1_schermata_principale_controller.html#a957704d1fa1f7b785da59a144b523999", null ]
-];
