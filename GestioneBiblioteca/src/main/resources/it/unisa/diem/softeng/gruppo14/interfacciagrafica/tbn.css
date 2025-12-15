@@ -1,9 +1,0 @@
-/* 1. Sfondo Grigio per la Barra dei Tab (dove ci sono le etichette) */
-.tab-pane .tab-header-area {
-    -fx-background-color: grey; /* Grigio */
-}
-
-/* Rimuove o rende quasi invisibile la linea di divisione predefinita */
-.tab-pane .tab-header-area .tab-header-background {
-    -fx-background-color: transparent; 
-}

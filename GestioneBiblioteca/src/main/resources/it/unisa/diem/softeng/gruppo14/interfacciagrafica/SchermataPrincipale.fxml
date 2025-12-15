@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -11,96 +10,80 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" prefHeight="643.0" prefWidth="890.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.SchermataPrincipaleController">
-   <children>
-      <!-- VBox che contiene MenuBar e TabPane -->
-      <VBox layoutY="6.0" prefHeight="644.0" prefWidth="900.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         
-         <!-- Menu Bar -->
-         <MenuBar style="-fx-background-color: grey; -fx-background-radius: 30;">
-           <menus>
-             <Menu mnemonicParsing="false" style="-fx-background-radius: 30;" text="Archivio...">
-               <items>
-                 <MenuItem fx:id="salvaBtn" mnemonicParsing="false" onAction="#salvaArchivio" text="Salva Dati su File" />
-               </items>
-                  <graphic>
-                     <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@diskette.png" />
-                        </image>
-                     </ImageView>
-                  </graphic>
-             </Menu>
-           </menus>
-         </MenuBar>
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1000.0" style="-fx-base: #1E1E1E; -fx-background-color: #1E1E1E;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.softeng.gruppo14.gestioneinterfaccia.SchermataPrincipaleController">
+    <children>
+        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <MenuBar style="-fx-background-color: #333333; -fx-padding: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 1);">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Archivio...">
+                            <items>
+                                <MenuItem fx:id="salvaBtn" mnemonicParsing="false" onAction="#salvaArchivio" text="Salva Dati su File" />
+                            </items>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@diskette.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Menu>
+                    </menus>
+                </MenuBar>
 
-         <!-- TabPane che contiene le tabelle -->
-         <TabPane prefHeight="615.0" prefWidth="900.0" side="BOTTOM" style="-fx-background-color: grey;" stylesheets="@tbn.css" tabClosingPolicy="UNAVAILABLE" tabMinHeight="30.0" tabMinWidth="192.0">
-           <tabs>
-             <!-- Tab Gestione Libri -->
-             <Tab style="-fx-background-color: #a6a6a6; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: grey; -fx-border-width: 10; -fx-padding: 3;" text="Libri">
-               <content>
-                 <fx:include fx:id="gestioneLibriPane" source="ListaLibri.fxml" />
-               </content>
-                  <graphic>
-                     <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@open-book.png" />
-                        </image>
-                     </ImageView>
-                  </graphic>
-             </Tab>
-
-             <!-- Tab Gestione Utenti -->
-             <Tab style="-fx-background-color: #a6a6a6; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-radius: 30; -fx-border-width: 10; -fx-padding: 3;" text="Utenti">
-               <content>
-                   <fx:include fx:id="gestioneUtentiPane" source="ListaUtenti.fxml" />
-               </content>
-                  <graphic>
-                     <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@users.png" />
-                        </image>
-                     </ImageView>
-                  </graphic>
-             </Tab>
-
-             <!-- Tab Prestiti Attivi -->
-             <Tab style="-fx-background-color: #a6a6a6; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-radius: 30; -fx-border-width: 10; -fx-padding: 3;" text="Prestiti Attivi">
-               <content>
-                 <fx:include fx:id="gestionePrestitiPane" source="ListaPrestiti.fxml" />
-               </content>
-                  <graphic>
-                     <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@loan.png" />
-                        </image>
-                     </ImageView>
-                  </graphic>
-             </Tab>
-
-             <!-- Tab Nuovo Prestito -->
-             <Tab style="-fx-background-color: #a6a6a6; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-radius: 30; -fx-border-width: 10; -fx-padding: 3;" text="Nuovo Prestito">
-               <content>
-                 <fx:include fx:id="nuovoPrestitoPane" source="NuovoPrestito.fxml" />
-               </content>
-                  <graphic>
-                     <ImageView fitHeight="20.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@add.png" />
-                        </image>
-                     </ImageView>
-                  </graphic>
-             </Tab>
-           </tabs>
-            <VBox.margin>
-               <Insets />
-            </VBox.margin>
-            <opaqueInsets>
-               <Insets />
-            </opaqueInsets>
-         </TabPane>
-         
-      </VBox>
-   </children>
+                <TabPane side="BOTTOM" style="-fx-background-color: #1E1E1E;" tabClosingPolicy="UNAVAILABLE" tabMinHeight="35.0" tabMinWidth="200.0" VBox.vgrow="ALWAYS">
+                    <tabs>
+                        <Tab text="Libri">
+                            <content>
+                                <fx:include fx:id="gestioneLibriPane" source="ListaLibri.fxml" />
+                            </content>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@open-book.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Tab>
+                        <Tab text="Utenti">
+                            <content>
+                                <fx:include fx:id="gestioneUtentiPane" source="ListaUtenti.fxml" />
+                            </content>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@users.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Tab>
+                        <Tab text="Prestiti Attivi">
+                            <content>
+                                <fx:include fx:id="gestionePrestitiPane" source="ListaPrestiti.fxml" />
+                            </content>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@loan.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Tab>
+                        <Tab text="Nuovo Prestito">
+                            <content>
+                                <fx:include fx:id="nuovoPrestitoPane" source="NuovoPrestito.fxml" />
+                            </content>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@add.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>

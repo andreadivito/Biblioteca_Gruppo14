@@ -59,12 +59,7 @@ public class PrestitoAttivoController implements Initializable {
             setStyle("");
         } else {
             if (prestito.getDataRestituzione().isBefore(LocalDate.now())) {
-                // Se è selezionata usa un rosso scuro, altrimenti rosso chiaro
-                if (isSelected()) {
-                     setStyle("-fx-control-inner-background: #cc0000; -fx-background-color: #cc0000;");
-                } else {
-                     setStyle("-fx-control-inner-background: #ffcccc; -fx-background-color: #ffcccc;");
-                }
+                setStyle("-fx-control-inner-background: red; -fx-background-color: red;");
             } else {
                 setStyle("");
                 }   
