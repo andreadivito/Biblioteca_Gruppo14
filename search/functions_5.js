@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['gestionelibri_0',['GestioneLibri',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionelogica_1_1_gestione_libri.html#a85076546e4cb6fe5ec61389975b34125',1,'it::unisa::diem::softeng::gruppo14::gestionelogica::GestioneLibri']]],
+  ['gestioneprestiti_1',['GestionePrestiti',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionelogica_1_1_gestione_prestiti.html#a8f5766d37e811a8b363a9c3246069342',1,'it::unisa::diem::softeng::gruppo14::gestionelogica::GestionePrestiti']]],
+  ['gestioneutenti_2',['GestioneUtenti',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionelogica_1_1_gestione_utenti.html#a41f8ce5fe22900b448b7c72ad8a3e6bf',1,'it::unisa::diem::softeng::gruppo14::gestionelogica::GestioneUtenti']]],
+  ['getannopubblicazione_3',['getAnnoPubblicazione',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionedati_1_1_libro.html#ad1440aa562fdb80498ed05ce0650164c',1,'it::unisa::diem::softeng::gruppo14::gestionedati::Libro']]],
+  ['getautori_4',['getAutori',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionedati_1_1_libro.html#a093d524643808a70472eb54d59250bb8',1,'it::unisa::diem::softeng::gruppo14::gestionedati::Libro']]],
+  ['getcognome_5',['getCognome',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionedati_1_1_utente.html#a925f703855e927b4dee8a445ed7eec2e',1,'it::unisa::diem::softeng::gruppo14::gestionedati::Utente']]],
+  ['getdatarestituzione_6',['getDataRestituzione',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionedati_1_1_prestito.html#a8a1093c347395ff8abe3c38c0f0901dd',1,'it::unisa::diem::softeng::gruppo14::gestionedati::Prestito']]],
+  ['getemail_7',['getEmail',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionedati_1_1_utente.html#aa31602af3458311ad01ff3a1be7fe026',1,'it::unisa::diem::softeng::gruppo14::gestionedati::Utente']]],
+  ['getisbn_8',['getISBN',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionedati_1_1_libro.html#a09b30d5a73701ef3f836771ec48800b5',1,'it::unisa::diem::softeng::gruppo14::gestionedati::Libro']]],
+  ['getlibri_9',['getLibri',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionelogica_1_1_gestione_libri.html#ad607adc69aca9ca82fe5e3284e0bef44',1,'it::unisa::diem::softeng::gruppo14::gestionelogica::GestioneLibri']]],
+  ['getlibro_10',['getLibro',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionedati_1_1_prestito.html#a7f847a6d04b10f883368e5ecacdef5da',1,'it::unisa::diem::softeng::gruppo14::gestionedati::Prestito']]],
+  ['getmatricola_11',['getMatricola',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionedati_1_1_utente.html#ac3581ac870c824d8e3034fea908fe771',1,'it::unisa::diem::softeng::gruppo14::gestionedati::Utente']]],
+  ['getnome_12',['getNome',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionedati_1_1_utente.html#a0802862511ee4d56de0d3a1a1825327c',1,'it::unisa::diem::softeng::gruppo14::gestionedati::Utente']]],
+  ['getnumcopie_13',['getNumCopie',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionedati_1_1_libro.html#ac0fcd57669e7cdb06a4a5c6c8aec9148',1,'it::unisa::diem::softeng::gruppo14::gestionedati::Libro']]],
+  ['getprestiti_14',['getPrestiti',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionelogica_1_1_gestione_prestiti.html#ab08b698cdb273a910bee9aa7c0982c02',1,'it::unisa::diem::softeng::gruppo14::gestionelogica::GestionePrestiti']]],
+  ['gettitolo_15',['getTitolo',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionedati_1_1_libro.html#af64df4fc0fe6e36127136d3438f1b770',1,'it::unisa::diem::softeng::gruppo14::gestionedati::Libro']]],
+  ['getutente_16',['getUtente',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionedati_1_1_prestito.html#a785636128a283ed8f333a9f5e150aa34',1,'it::unisa::diem::softeng::gruppo14::gestionedati::Prestito']]],
+  ['getutenti_17',['getUtenti',['../classit_1_1unisa_1_1diem_1_1softeng_1_1gruppo14_1_1gestionelogica_1_1_gestione_utenti.html#a18cd6c028512ab89c87329109f155944',1,'it::unisa::diem::softeng::gruppo14::gestionelogica::GestioneUtenti']]]
+];
