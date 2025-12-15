@@ -20,7 +20,7 @@ public class GestioneLibri {
     
     /// Lista contenente i libri presenti nell'archivio.
     private List <Libro> libri;
-    
+     
     /**
      * @brief Costruttore.
      * 

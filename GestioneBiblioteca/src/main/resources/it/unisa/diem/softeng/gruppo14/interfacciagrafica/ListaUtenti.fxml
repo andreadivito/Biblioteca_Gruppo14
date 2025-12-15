@@ -48,12 +48,12 @@
                   <TextField fx:id="userSearchField" prefHeight="26.0" prefWidth="180.0" promptText="Cerca... (Cognome, Matricola)" style="-fx-background-radius: 50;" />
                </children>
             </HBox>
-            <TableView fx:id="userTable1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="430.0" prefWidth="618.0" style="-fx-background-radius: 30; -fx-background-color: #d9d9d9; -fx-padding: -2;">
+            <TableView fx:id="userTable1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="430.0" prefWidth="618.0" style="-fx-background-color: #d9d9d9; -fx-padding: -2;">
                <columns>
-                  <TableColumn fx:id="surnameClm1" prefWidth="150.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Cognome" />
-                  <TableColumn fx:id="nameClm1" prefWidth="150.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Nome" />
-                  <TableColumn fx:id="codeClm1" prefWidth="141.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Matricola" />
-                  <TableColumn fx:id="mailClm1" prefWidth="205.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Email" />
+                  <TableColumn fx:id="surnameClm1" prefWidth="150.0" style="-fx-border-color: #999999; -fx-border-width: 0.2;" text="Cognome" />
+                  <TableColumn fx:id="nameClm1" prefWidth="150.0" style="-fx-border-color: #999999; -fx-border-width: 0.2;" text="Nome" />
+                  <TableColumn fx:id="codeClm1" prefWidth="141.0" style="-fx-border-color: #999999; -fx-border-width: 0.2;" text="Matricola" />
+                  <TableColumn fx:id="mailClm1" prefWidth="205.0" style="-fx-border-color: #999999; -fx-border-width: 0.2;" text="Email" />
                </columns>
             </TableView>
          </children>
@@ -80,7 +80,14 @@
                   <TextField fx:id="surnameField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="200.0" promptText="Cognome" style="-fx-background-radius: 50;" />
                   <TextField fx:id="codeField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="200.0" promptText="Matricola" style="-fx-background-radius: 50;" />
                   <TextField fx:id="mailField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="200.0" promptText="nome@unisa.it" style="-fx-background-radius: 50;" />
-                  <Button fx:id="aggiungiUBtn" mnemonicParsing="false" onAction="#aggiungiUtenteBtn" prefWidth="200.0" style="-fx-background-color: #C0E3AF; -fx-background-radius: 50;">
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="98.0" prefWidth="240.0" spacing="10.0" style="-fx-background-color: rgba(153, 153, 153, 0.8); -fx-background-radius: 30;">
+               <children>
+                  <Button fx:id="aggiungiUBtn" mnemonicParsing="false" onAction="#aggiungiUtenteBtn" prefWidth="200.0" style="-fx-background-color: #C0E3AF; -fx-background-radius: 50;" text="Aggiungi">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -88,14 +95,10 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
                   </Button>
-               </children>
-               <padding>
-                  <Insets bottom="20.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="98.0" prefWidth="240.0" spacing="10.0" style="-fx-background-color: rgba(153, 153, 153, 0.8); -fx-background-radius: 30;">
-               <children>
                   <Button fx:id="modificaUBtn" mnemonicParsing="false" onAction="#modificaUtenteBtn" prefWidth="200.0" style="-fx-background-radius: 50; -fx-background-color: #cccccc;" text="   Modifica">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -105,7 +108,7 @@
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets />
                      </VBox.margin>
                   </Button>
                   <Button fx:id="rimuoviUBtn" alignment="CENTER" mnemonicParsing="false" onAction="#rimuoviUtenteBtn" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-background-radius: 50;" text="   Rimuovi">

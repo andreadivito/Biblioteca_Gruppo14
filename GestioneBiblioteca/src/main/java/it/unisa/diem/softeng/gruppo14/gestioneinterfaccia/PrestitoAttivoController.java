@@ -3,6 +3,7 @@ package it.unisa.diem.softeng.gruppo14.gestioneinterfaccia;
 import it.unisa.diem.softeng.gruppo14.gestionedati.Prestito;
 import it.unisa.diem.softeng.gruppo14.gestionedati.Utente;
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
@@ -10,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 
 /**
@@ -47,6 +49,29 @@ public class PrestitoAttivoController implements Initializable {
         loanUserClm.setCellValueFactory(c -> new SimpleStringProperty(formatUser(c.getValue().getUtente())));
         dateLimitClm.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getDataRestituzione().format(DTF)));
 
+        LoanTable.setRowFactory(tv -> new TableRow<Prestito>() {
+    
+        @Override
+        protected void updateItem(Prestito prestito, boolean empty) {
+        super.updateItem(prestito, empty);
+
+        if (prestito == null || empty) {
+            setStyle("");
+        } else {
+            if (prestito.getDataRestituzione().isBefore(LocalDate.now())) {
+                // Se è selezionata usa un rosso scuro, altrimenti rosso chiaro
+                if (isSelected()) {
+                     setStyle("-fx-control-inner-background: #cc0000; -fx-background-color: #cc0000;");
+                } else {
+                     setStyle("-fx-control-inner-background: #ffcccc; -fx-background-color: #ffcccc;");
+                }
+            } else {
+                setStyle("");
+                }   
+            }
+        }
+    });
+        
         SchermataPrincipaleController.Shared.refreshAll();
         LoanTable.setItems(SchermataPrincipaleController.Shared.prestitiObs);
     }

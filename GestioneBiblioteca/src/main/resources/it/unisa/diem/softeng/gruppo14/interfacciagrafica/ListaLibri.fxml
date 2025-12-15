@@ -48,13 +48,13 @@
                   <Insets />
                </VBox.margin>
             </HBox>
-            <TableView fx:id="bookTable1" maxWidth="-Infinity" prefHeight="430.0" prefWidth="618.0" style="-fx-background-radius: 30; -fx-background-color: #d9d9d9; -fx-padding: -2;">
+            <TableView fx:id="bookTable1" maxWidth="-Infinity" prefHeight="430.0" prefWidth="618.0" style="-fx-background-color: #d9d9d9; -fx-padding: -2;">
                <columns>
-                  <TableColumn fx:id="titleClm1" prefWidth="154.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Titolo" />
-                  <TableColumn fx:id="authorClm1" prefWidth="146.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Autore" />
-                  <TableColumn fx:id="pubYearClm1" prefWidth="107.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Anno" />
-                  <TableColumn fx:id="isbnClm1" prefWidth="105.47308349609375" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="ISBN" />
-                  <TableColumn fx:id="numCopiesClm1" prefWidth="120.0" style="-fx-background-color: #d9d9d9; -fx-border-color: #999999; -fx-border-width: 0.2;" text="Copie" />
+                  <TableColumn fx:id="titleClm1" prefWidth="154.0" style="-fx-border-color: #999999; -fx-border-width: 0.2;" text="Titolo" />
+                  <TableColumn fx:id="authorClm1" prefWidth="146.0" style="-fx-border-color: #999999; -fx-border-width: 0.2;" text="Autore" />
+                  <TableColumn fx:id="pubYearClm1" prefWidth="107.0" style="-fx-border-color: #999999; -fx-border-width: 0.2;" text="Anno" />
+                  <TableColumn fx:id="isbnClm1" prefWidth="105.47308349609375" style="-fx-border-color: #999999; -fx-border-width: 0.2;" text="ISBN" />
+                  <TableColumn fx:id="numCopiesClm1" prefWidth="120.0" style="-fx-border-color: #999999; -fx-border-width: 0.2;" text="Copie" />
                </columns>
             </TableView>
          </children>
@@ -82,15 +82,6 @@
                   <TextField fx:id="pubYearField" alignment="CENTER" maxWidth="-Infinity" prefWidth="200.0" promptText="Anno Pubblicazione" style="-fx-background-radius: 50;" />
                   <TextField fx:id="isbnField" alignment="CENTER" maxWidth="200.0" promptText="ISBN" style="-fx-background-radius: 50;" />
                   <TextField fx:id="numCopiesField" alignment="CENTER" maxWidth="-Infinity" prefWidth="200.0" promptText="Numero Copie" style="-fx-background-radius: 50;" />
-                  <Button fx:id="aggiungiLBtn" mnemonicParsing="false" onAction="#aggiungiLibroBtn" prefWidth="200.0" style="-fx-background-color: #C0E3AF; -fx-background-radius: 50;">
-                     <graphic>
-                        <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@check-mark.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                </children>
                <padding>
                   <Insets bottom="20.0" />
@@ -101,6 +92,18 @@
                   <Insets bottom="20.0" />
                </padding>
                <children>
+                  <Button fx:id="aggiungiLBtn" mnemonicParsing="false" onAction="#aggiungiLibroBtn" prefWidth="200.0" style="-fx-background-color: #C0E3AF; -fx-background-radius: 50;" text="Aggiungi">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@check-mark.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
                   <Button fx:id="modificaLBtn" mnemonicParsing="false" onAction="#modificaLibroBtn" prefWidth="200.0" style="-fx-background-radius: 50; -fx-background-color: #cccccc;" text="   Modifica">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -110,10 +113,10 @@
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="rimuoviLBtn" mnemonicParsing="false" onAction="#rimuoviLibroBtn" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-background-radius: 50;" text="   Elimina">
+                  <Button fx:id="rimuoviLBtn" mnemonicParsing="false" onAction="#rimuoviLibroBtn" prefWidth="200.0" style="-fx-background-color: #ff9999; -fx-background-radius: 50;" text="Rimuovi">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
