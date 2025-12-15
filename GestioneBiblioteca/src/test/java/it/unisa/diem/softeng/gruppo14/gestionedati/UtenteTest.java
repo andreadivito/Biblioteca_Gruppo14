@@ -25,6 +25,56 @@ public class UtenteTest {
         
     }
     
+    @Test
+    public void testCostruttoreNomeNonValido() {
+        
+        System.out.println("Costruttore - Nome Invalidi");
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Utente(null, "Rossi", "0612700001", "m.rossi@studenti.unisa.it"));
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Utente("", "Rossi", "0612700001", "m.rossi@studenti.unisa.it"));
+        
+    }
+    
+    @Test
+    public void testCostruttoreCognomeNonValido() {
+        
+        System.out.println("Costruttore - Cognome Invalidi");
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Utente("Mario", null, "0612700001", "m.rossi@studenti.unisa.it"));
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Utente("Mario", "", "0612700001", "m.rossi@studenti.unisa.it"));
+        
+    }
+    
+    @Test
+    public void testCostruttoreMatricolaNonValida() {
+        
+        System.out.println("Costruttore - Matricola Invalida");
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Utente("Mario", "Rossi", null, "m.rossi@studenti.unisa.it"));
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Utente("Mario", "Rossi", "123", "m.rossi@studenti.unisa.it"));
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Utente("Mario", "Rossi", "012345678912", "m.rossi@studenti.unisa.it"));
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Utente("Mario", "Rossi", "ABC1234567", "m.rossi@studenti.unisa.it"));
+        
+    }
+    
+    @Test
+    public void testCostruttoreEmailNonValida() {
+        
+        System.out.println("Costruttore - Email Invalidi");
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Utente("Mario", "Rossi", "0612700001", null));
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Utente("Mario", "Rossi", "0612700001", ""));
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Utente("Mario", "Rossi", "0612700001", "mario@gmail.com"));
+        
+    }
+    
     /**
      * Test of getNome method, of class Utente.
      */
@@ -91,6 +141,16 @@ public class UtenteTest {
         
     }
 
+    @Test
+    public void testSetNomeNonValido() {
+        
+        System.out.println("SetNome - Valori Invalidi");
+        assertThrows(IllegalArgumentException.class, () -> utente.setNome(null));
+        assertThrows(IllegalArgumentException.class, () -> utente.setNome(""));
+        assertThrows(IllegalArgumentException.class, () -> utente.setNome("   "));
+        
+    }
+    
     /**
      * Test of setCognome method, of class Utente.
      */
@@ -105,6 +165,15 @@ public class UtenteTest {
         
     }
 
+    @Test
+    public void testSetCognomeNonValido() {
+        
+        System.out.println("SetCognome - Valori Invalidi");
+        assertThrows(IllegalArgumentException.class, () -> utente.setCognome(null));
+        assertThrows(IllegalArgumentException.class, () -> utente.setCognome(""));
+        
+    }
+    
     /**
      * Test of setMatricola method, of class Utente.
      */
@@ -116,6 +185,18 @@ public class UtenteTest {
         utente.setMatricola(matricola);
         String expResult = "0612700002";
         assertEquals(expResult, utente.getMatricola());
+        
+    }
+    
+    @Test
+    public void testSetMatricolaNonValida() {
+        
+        System.out.println("SetMatricola - Valori Invalidi");
+        assertThrows(IllegalArgumentException.class, () -> utente.setMatricola(null));
+        assertThrows(IllegalArgumentException.class, () -> utente.setMatricola("")); 
+        assertThrows(IllegalArgumentException.class, () -> utente.setMatricola("12345")); 
+        assertThrows(IllegalArgumentException.class, () -> utente.setMatricola("012345678912")); 
+        assertThrows(IllegalArgumentException.class, () -> utente.setMatricola("061270000A")); 
         
     }
 
@@ -133,6 +214,17 @@ public class UtenteTest {
         
     }
 
+    @Test
+    public void testSetEmailNonValida() {
+        
+        System.out.println("SetEmail - Valori Invalidi");
+        assertThrows(IllegalArgumentException.class, () -> utente.setEmail(null));
+        assertThrows(IllegalArgumentException.class, () -> utente.setEmail(""));
+        assertThrows(IllegalArgumentException.class, () -> utente.setEmail("mario.rossi")); 
+        assertThrows(IllegalArgumentException.class, () -> utente.setEmail("mario@libero.it")); 
+        
+    }
+    
     /**
      * Test of toString method, of class Utente.
      */

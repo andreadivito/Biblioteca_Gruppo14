@@ -35,6 +35,33 @@ public class PrestitoTest {
         
     }
 
+    @Test
+    public void testCostruttoreLibroNull() {
+        
+        System.out.println("Costruttore - Libro Null");
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Prestito(null, utente, dataRestituzione));
+        
+    }
+    
+    @Test
+    public void testCostruttoreUtenteNull() {
+        
+        System.out.println("Costruttore - Utente Null");
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Prestito(libro, null, dataRestituzione));
+        
+    }
+    
+    @Test
+    public void testCostruttoreDataRestituzioneNull() {
+        
+        System.out.println("Costruttore - Data Restituzione Null");
+        assertThrows(IllegalArgumentException.class, () -> 
+            new Prestito(libro, utente, null));
+        
+    }
+    
     /**
      * Test of getLibro method, of class Prestito.
      */
@@ -88,6 +115,14 @@ public class PrestitoTest {
         
     }
 
+    @Test
+    public void testSetLibroNull() {
+        
+        System.out.println("SetLibro - Valore Null");
+        assertThrows(IllegalArgumentException.class, () -> prestito.setLibro(null));
+        
+    }
+    
     /**
      * Test of setUtente method, of class Prestito.
      */
@@ -102,6 +137,14 @@ public class PrestitoTest {
         
     }
 
+    @Test
+    public void testSetUtenteNull() {
+        
+        System.out.println("SetUtente - Valore Null");
+        assertThrows(IllegalArgumentException.class, () -> prestito.setUtente(null));
+        
+    }
+    
     /**
      * Test of setDataRestituzione method, of class Prestito.
      */
@@ -116,6 +159,12 @@ public class PrestitoTest {
         
     }
 
+    @Test
+    public void testSetDataRestituzioneNull() {
+        System.out.println("SetDataRestituzione - Valore Null");
+        assertThrows(IllegalArgumentException.class, () -> prestito.setDataRestituzione(null));
+    }
+    
     /**
      * Test of verificaRitardo method, of class Prestito.
      */

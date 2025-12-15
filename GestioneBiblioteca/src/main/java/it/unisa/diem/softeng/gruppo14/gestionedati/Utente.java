@@ -45,7 +45,7 @@ public class Utente implements Serializable{
         this.nome = nome;
         if(cognome == null || cognome.trim().isEmpty()) throw new IllegalArgumentException("Cognome non valido");
         this.cognome = cognome;
-        if(matricola == null || matricola.matches("//d{10}")) throw new IllegalArgumentException("Matricola non valida");
+        if(matricola == null || !matricola.matches("\\d{10}")) throw new IllegalArgumentException("Matricola non valida");
         this.matricola = matricola;
         if(email == null || email.trim().isEmpty() || (!email.endsWith("@studenti.unisa.it") && !email.endsWith("@unisa.it")) ) throw new IllegalArgumentException("E-mail non valida");
         this.email = email;
@@ -120,7 +120,7 @@ public class Utente implements Serializable{
      * @post Il campo `matricola` viene aggiornato.
      */
     public void setMatricola(String matricola) {
-        if(matricola == null || matricola.matches("//d{10}")) throw new IllegalArgumentException("Matricola non valida");
+        if(matricola == null || !matricola.matches("\\d{10}")) throw new IllegalArgumentException("Matricola non valida");
         this.matricola = matricola;
     }
     
