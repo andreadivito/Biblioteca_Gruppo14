@@ -69,7 +69,29 @@ public class GestioneUtentiTest {
         assertEquals(1, gestioneUtenti.getUtenti().size());
         
     }
+    
+    @Test
+    public void testAggiungiUtenteNull() {
+        
+        System.out.println("aggiungiUtente - Null");
+        int sizeIniziale = gestioneUtenti.getUtenti().size();
+        gestioneUtenti.aggiungiUtente(null);
+        assertEquals(sizeIniziale, gestioneUtenti.getUtenti().size());
+        
+    }
 
+    @Test
+    public void testAggiungiUtenteDuplicato() {
+        
+        System.out.println("aggiungiUtente - Duplicato Matricola");
+        Utente u1 = new Utente("Mario", "Rossi", "0612700001", "m.rossi@studenti.unisa.it");
+        gestioneUtenti.aggiungiUtente(u1);
+        Utente u2 = new Utente("Luigi", "Verdi", "0612700001", "l.verdi@studenti.unisa.it");
+        assertThrows(IllegalArgumentException.class, () -> 
+            gestioneUtenti.aggiungiUtente(u2));
+        
+    }
+    
     /**
      * Test of modificaUtente method, of class GestioneUtenti.
      */
@@ -121,6 +143,29 @@ public class GestioneUtentiTest {
         
     }
     
+    @Test
+    public void testModificaUtenteParametriNull() {
+        
+         System.out.println("modificaUtente - Parametri Null");
+         Utente u = new Utente("Mario", "Rossi", "0612700001", "m.rossi@studenti.unisa.it");
+         gestioneUtenti.aggiungiUtente(u);
+         gestioneUtenti.modificaUtente(u, null);
+         assertEquals("Mario", u.getNome(), "L'utente non deve cambiare se i nuovi dati sono null");
+         
+    }
+    
+    @Test
+    public void testModificaUtenteNonPresente() {
+        
+        System.out.println("modificaUtente - Utente non in archivio");
+        Utente uNonPresente = new Utente("Luigi", "User", "0612708860", "luigi@unisa.it");
+        Utente uNuoviDati = new Utente("Mario", "User", "0612708860", "mario@unisa.it");
+        assertFalse(gestioneUtenti.getUtenti().contains(uNonPresente));
+        gestioneUtenti.modificaUtente(uNonPresente, uNuoviDati);
+        assertFalse(gestioneUtenti.getUtenti().contains(uNonPresente));
+        assertEquals(0, gestioneUtenti.getUtenti().size());
+        
+    }
     
     /**
      * Test of eliminaUtente method, of class GestioneUtenti.
@@ -134,6 +179,30 @@ public class GestioneUtentiTest {
         List<Prestito> prestitiVuoti = new ArrayList<>();
         gestioneUtenti.eliminaUtente(u, prestitiVuoti);
         assertTrue(gestioneUtenti.getUtenti().isEmpty());
+        
+    }
+    
+    @Test
+    public void testEliminaUtenteNull() {
+        
+        System.out.println("eliminaUtente - Null");
+        List<Prestito> prestiti = new ArrayList<>();
+        assertDoesNotThrow(() -> gestioneUtenti.eliminaUtente(null, prestiti));
+        
+    }
+    
+    @Test
+    public void testEliminaUtenteConPrestitoAttivo() {
+        
+        System.out.println("eliminaUtente - Utente con Prestito Attivo");
+        Utente u = new Utente("Mario", "Rossi", "0612700001", "m.rossi@studenti.unisa.it");
+        gestioneUtenti.aggiungiUtente(u);
+        Libro l = new Libro("Libro Test", Arrays.asList("Autore"), 2020, "978-88-12345", 1);
+        Prestito p = new Prestito(l, u, LocalDate.now().plusDays(10));
+        List<Prestito> listaPrestiti = new ArrayList<>();
+        listaPrestiti.add(p);
+        assertThrows(IllegalArgumentException.class, () -> 
+            gestioneUtenti.eliminaUtente(u, listaPrestiti));
         
     }
     

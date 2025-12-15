@@ -113,8 +113,8 @@ public class ComparatoreUtentiTest {
     public void testCompare7() {
        
         System.out.println("Compare - IgnoreCase");
-        o1 = new Utente ("andrea" , "di vito", "001", "a.divito7@studenti.unisa.it");
-        o2 = new Utente ("Andrea" , "Di Vito", "001", "a.divito7@studenti.unisa.it");
+        o1 = new Utente ("andrea" , "di vito", "0612709214", "a.divito7@studenti.unisa.it");
+        o2 = new Utente ("Andrea" , "Di Vito", "0612709214", "a.divito7@studenti.unisa.it");
         int expResult = 0;
         int result = c.compare(o1, o2);
         assertEquals(expResult, result);

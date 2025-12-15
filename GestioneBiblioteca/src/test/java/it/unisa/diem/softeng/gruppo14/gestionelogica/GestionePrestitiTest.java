@@ -4,7 +4,7 @@ import it.unisa.diem.softeng.gruppo14.gestionedati.Libro;
 import it.unisa.diem.softeng.gruppo14.gestionedati.Prestito;
 import it.unisa.diem.softeng.gruppo14.gestionedati.Utente;
 import java.time.LocalDate;
-import java.util.Arrays; // Import necessario
+import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
@@ -125,4 +125,24 @@ public class GestionePrestitiTest {
      
     }
 
+    @Test
+    public void testRegistraRestituzioneNull() {
+        
+        System.out.println("registraRestituzione - Null");
+        assertDoesNotThrow(() -> gestionePrestiti.registraRestituzione(null));
+        
+    }
+    
+    @Test
+    public void testRegistraRestituzioneNonPresente() {
+        
+        System.out.println("registraRestituzione - Prestito non in elenco");
+        assertEquals(5, libro.getNumCopie());
+        Prestito prestitoFantasma = new Prestito(libro, utente, dataScadenza);
+        gestionePrestiti.registraRestituzione(prestitoFantasma);
+        assertEquals(5, libro.getNumCopie(), "Non si devono incrementare copie se il prestito non esisteva");
+        assertTrue(gestionePrestiti.getPrestiti().isEmpty());
+        
+    }
+    
 }

@@ -2,6 +2,7 @@ package it.unisa.diem.softeng.gruppo14.gestionelogica;
 
 import it.unisa.diem.softeng.gruppo14.gestionedati.Libro;
 import it.unisa.diem.softeng.gruppo14.gestionedati.Prestito;
+import it.unisa.diem.softeng.gruppo14.gestionedati.Utente;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -58,6 +59,28 @@ public class GestioneLibriTest {
         
     }
 
+    @Test
+    public void testAggiungiLibroNull() {
+        
+        System.out.println("aggiungiLibro - Null");
+        int sizeIniziale = gestioneLibri.getLibri().size();
+        gestioneLibri.aggiungiLibro(null);
+        assertEquals(sizeIniziale, gestioneLibri.getLibri().size());
+        
+    }
+    
+    @Test
+    public void testAggiungiLibroDuplicato() {
+        
+        System.out.println("aggiungiLibro - Duplicato ISBN");
+        Libro l1 = new Libro("Libro A", Arrays.asList("Autore A"), 2000, "978-88-12345", 1);
+        gestioneLibri.aggiungiLibro(l1);
+        Libro l2 = new Libro("Libro B", Arrays.asList("Autore B"), 2020, "978-88-12345", 1);
+        assertThrows(IllegalArgumentException.class, () -> 
+            gestioneLibri.aggiungiLibro(l2));
+        
+    }
+    
     @Test
     public void testModificaLibro1() {
         
@@ -122,6 +145,30 @@ public class GestioneLibriTest {
     }
 
     @Test
+    public void testModificaLibroNonPresente() {
+        
+        System.out.println("modificaLibro - Libro non in archivio");
+        Libro lNonPresente = new Libro("LibroA", Arrays.asList("A"), 2000, "978-88-99999", 1);
+        Libro lNuoviDati = new Libro("LibroB", Arrays.asList("B"), 2020, "978-88-99999", 2);
+        assertFalse(gestioneLibri.getLibri().contains(lNonPresente));
+        gestioneLibri.modificaLibro(lNonPresente, lNuoviDati);
+        assertFalse(gestioneLibri.getLibri().contains(lNonPresente));
+        assertEquals(0, gestioneLibri.getLibri().size());
+        
+    }
+    
+    @Test
+    public void testModificaLibroParametriNull() {
+        
+         System.out.println("modificaLibro - Parametri Null");
+         Libro l = new Libro("Test", Arrays.asList("A"), 2000, "978-88-12345", 1);
+         gestioneLibri.aggiungiLibro(l);
+         gestioneLibri.modificaLibro(l, null);
+         assertEquals("Test", l.getTitolo(), "Il libro non doveva cambiare se il parametro nuovo è null");
+         
+    }
+    
+    @Test
     public void testEliminaLibro() {
         
         System.out.println("eliminaLibro - Caso Senza Prestiti");
@@ -133,6 +180,30 @@ public class GestioneLibriTest {
         
     }
 
+    @Test
+    public void testEliminaLibroNull() {
+        
+        System.out.println("eliminaLibro - Null");
+        List<Prestito> prestiti = new ArrayList<>();
+        assertDoesNotThrow(() -> gestioneLibri.eliminaLibro(null, prestiti));
+        
+    }
+    
+    @Test
+    public void testEliminaLibroInPrestito() {
+        
+        System.out.println("eliminaLibro - Libro in Prestito");
+        Libro l = new Libro("Libro Prestato", Arrays.asList("Autore"), 2000, "978-88-00000", 1);
+        gestioneLibri.aggiungiLibro(l);
+        Utente u = new Utente("Test", "User", "0612709214", "t.user@studenti.unisa.it");
+        Prestito p = new Prestito(l, u, java.time.LocalDate.now().plusDays(10));
+        List<Prestito> listaPrestiti = new ArrayList<>();
+        listaPrestiti.add(p);
+        assertThrows(IllegalArgumentException.class, () -> 
+            gestioneLibri.eliminaLibro(l, listaPrestiti));
+        
+    }
+    
     @Test
     public void testCercaLibro1() {
         
